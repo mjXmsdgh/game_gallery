@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b6al01tklt823"]
+
+[node name="ThreeMatch" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 255.0
+offset_top = 113.0
+offset_right = 350.0
+offset_bottom = 136.0
+text = "three match"
