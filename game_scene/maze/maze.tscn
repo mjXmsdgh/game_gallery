@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=4 uid="uid://h3whre0d12n7"]
+[gd_scene load_steps=3 format=4 uid="uid://h3whre0d12n7"]
 
 [ext_resource type="TileSet" uid="uid://8wsraksi7ami" path="res://game_scene/maze/maze.tres" id="1_2a5fv"]
+[ext_resource type="Texture2D" uid="uid://cl4cin7et0obt" path="res://image/player.png" id="2_4jhjv"]
 
 [node name="Maze" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_right = 93.0
-offset_bottom = 23.0
+offset_left = 1030.0
+offset_top = 27.0
+offset_right = 1123.0
+offset_bottom = 50.0
 text = "maze_scene"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAANAAcAAAAAAAAAAAANAAYAAAAAAAAAAAANAAUAAAAAAAAAAAANAAQAAAAAAAAAAAANAAMAAAAAAAAAAAA=")
 tile_set = ExtResource("1_2a5fv")
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(16, 16)
+texture = ExtResource("2_4jhjv")
