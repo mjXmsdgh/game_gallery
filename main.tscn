@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://m56kp0wew0pd"]
+[gd_scene load_steps=3 format=3 uid="uid://m56kp0wew0pd"]
 
-[ext_resource type="Script" path="res://three_match_button.gd" id="1_sht13"]
+[ext_resource type="Script" path="res://button_three_match.gd" id="1_as0sh"]
+[ext_resource type="Script" path="res://button_to_maze.gd" id="2_asoye"]
 
 [node name="main" type="Node2D"]
 
-[node name="Button" type="Button" parent="."]
-offset_left = 172.0
-offset_top = 225.0
-offset_right = 233.0
-offset_bottom = 256.0
-text = "change scene"
-script = ExtResource("1_sht13")
+[node name="Button_to_three_match" type="Button" parent="."]
+offset_left = 285.0
+offset_top = 159.0
+offset_right = 411.0
+offset_bottom = 190.0
+text = "to three_match"
+script = ExtResource("1_as0sh")
+
+[node name="Button_to_maze" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 160.0
+offset_right = 159.0
+offset_bottom = 191.0
+text = "to maze"
+script = ExtResource("2_asoye")
