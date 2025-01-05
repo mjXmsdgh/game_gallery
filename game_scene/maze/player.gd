@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 const TILE_SIZE=32
 @export var speed = TILE_SIZE
 
