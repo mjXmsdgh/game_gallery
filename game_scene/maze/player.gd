@@ -26,6 +26,11 @@ func _process(delta: float) -> void:
 	# 新しい位置
 	var new_position=position+move_value
 	
+	var collision=move_and_collide(move_value)
+	
+	if collision :
+		print("collision detected")
+	
 	# 丸める
 	new_position.x=round(new_position.x/TILE_SIZE)*TILE_SIZE
 	new_position.y=round(new_position.y/TILE_SIZE)*TILE_SIZE
