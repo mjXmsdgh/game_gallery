@@ -19,15 +19,17 @@ func _process(delta: float) -> void:
 		velocity.y += 1
 	if Input.is_action_just_pressed("ui_up"):
 		velocity.y -= 1
-		
-		
-		
-	#velocity = velocity.normalized() * speed
-	#position+=velocity*delta
 	
-	var new_position=position+velocity*TILE_SIZE
+	# 移動量
+	var move_value=velocity*TILE_SIZE
+	
+	# 新しい位置
+	var new_position=position+move_value
+	
+	# 丸める
 	new_position.x=round(new_position.x/TILE_SIZE)*TILE_SIZE
 	new_position.y=round(new_position.y/TILE_SIZE)*TILE_SIZE
 	
+	# 移動
 	position=new_position
 	
