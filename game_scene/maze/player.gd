@@ -1,18 +1,17 @@
 extends CharacterBody2D
 const TILE_SIZE=32
-@export var speed = TILE_SIZE
-@onready var sound_player=get_node("/root/Maze/AudioStreamPlayer2D")
-@onready var sound_player_go=get_node("/root/Maze/AudioStreamPlayer2D2")
-
+@onready var sound_go=$sound_go
+@onready var sound_stop=$sound_stop
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.
+	
+	# キー入力
 	if Input.is_action_just_pressed("ui_right"):
 		velocity.x += 1
 	if Input.is_action_just_pressed("ui_left"):
@@ -22,6 +21,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		velocity.y -= 1
 		
+	# 入力なし
 	if (velocity.x==0)and(velocity.y==0):
 		return
 	
@@ -31,15 +31,9 @@ func _process(delta: float) -> void:
 	# 新しい位置
 	var new_position=position+move_value
 	
-	
-	#var collision=move_and_collide(move_value)
-	#if collision :
-	#	print("collision detected")
-	#	sound_player.play_sound()
-	#	return
-	
+	# 移動できるかチェック
 	if test_move(global_transform,move_value):
-		sound_player.play_sound()
+		sound_stop.play_sound()
 		return
 	
 	# 丸める
@@ -48,5 +42,4 @@ func _process(delta: float) -> void:
 	
 	# 移動
 	position=new_position
-	sound_player_go.play_sound()
-	
+	sound_go.play_sound()	
