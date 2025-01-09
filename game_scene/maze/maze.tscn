@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://h3whre0d12n7"]
+[gd_scene load_steps=12 format=4 uid="uid://h3whre0d12n7"]
 
 [ext_resource type="TileSet" uid="uid://8wsraksi7ami" path="res://game_scene/maze/maze.tres" id="1_2a5fv"]
 [ext_resource type="Texture2D" uid="uid://cl4cin7et0obt" path="res://image/player.png" id="2_4jhjv"]
 [ext_resource type="Script" path="res://game_scene/maze/player.gd" id="2_p6toq"]
+[ext_resource type="Script" path="res://game_scene/maze/goal.gd" id="2_xme87"]
 [ext_resource type="AudioStream" uid="uid://db4nbqfl1nj11" path="res://sound/stop.ogg" id="4_45mpt"]
+[ext_resource type="AudioStream" uid="uid://dolpp8rx2wa3k" path="res://sound/fanfare.ogg" id="4_k2umb"]
 [ext_resource type="Script" path="res://game_scene/maze/sound_play.gd" id="5_d7yxj"]
 [ext_resource type="AudioStream" uid="uid://b1obua6ux87bg" path="res://sound/go.ogg" id="6_tcjp5"]
+[ext_resource type="Texture2D" uid="uid://c6vwjyhaechpx" path="res://image/flag.png" id="7_jer6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwpk"]
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56gcb"]
 size = Vector2(30.875, 31)
@@ -22,6 +28,22 @@ text = "maze_scene"
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAANAAcAAAAAAAAAAAANAAYAAAAAAAAAAAANAAUAAAAAAAAAAAANAAQAAAAAAAAAAAANAAMAAAAAAAAAAAA=")
 tile_set = ExtResource("1_2a5fv")
+
+[node name="goal" type="Area2D" parent="."]
+position = Vector2(128, 0)
+script = ExtResource("2_xme87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_qtwpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="goal"]
+position = Vector2(16, 16)
+texture = ExtResource("7_jer6f")
+
+[node name="sound_goal" type="AudioStreamPlayer2D" parent="goal"]
+stream = ExtResource("4_k2umb")
+script = ExtResource("5_d7yxj")
 
 [node name="player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_p6toq")
@@ -41,3 +63,5 @@ script = ExtResource("5_d7yxj")
 [node name="sound_stop" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("4_45mpt")
 script = ExtResource("5_d7yxj")
+
+[connection signal="body_shape_entered" from="goal" to="goal" method="_on_body_shape_entered"]
