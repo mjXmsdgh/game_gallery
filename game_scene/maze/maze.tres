@@ -1,14 +1,14 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://8wsraksi7ami"]
 
-[ext_resource type="Texture2D" uid="uid://05yfr6p5sjwc" path="res://image/brick.png" id="1_o7iqm"]
+[ext_resource type="Texture2D" uid="uid://ck2wtf5rada2g" path="res://maze_at.png" id="1_8wbi3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23uqv"]
-texture = ExtResource("1_o7iqm")
-0:0/size_in_atlas = Vector2i(2, 2)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52kuc"]
+texture = ExtResource("1_8wbi3")
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_23uqv")
+sources/7 = SubResource("TileSetAtlasSource_52kuc")
