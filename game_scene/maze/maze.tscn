@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://h3whre0d12n7"]
+[gd_scene load_steps=13 format=4 uid="uid://h3whre0d12n7"]
 
 [ext_resource type="TileSet" uid="uid://8wsraksi7ami" path="res://game_scene/maze/maze.tres" id="1_2a5fv"]
+[ext_resource type="AudioStream" uid="uid://cpelpli8fepfn" path="res://BGM/maze_bgm.ogg" id="1_ym271"]
 [ext_resource type="Texture2D" uid="uid://cl4cin7et0obt" path="res://image/player.png" id="2_4jhjv"]
 [ext_resource type="Script" path="res://game_scene/maze/player.gd" id="2_p6toq"]
 [ext_resource type="Script" path="res://game_scene/maze/goal.gd" id="2_xme87"]
@@ -25,6 +26,11 @@ offset_right = 1123.0
 offset_bottom = 50.0
 text = "maze_scene"
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ym271")
+autoplay = true
+bus = &"BGM"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAIABwAAAAAAAAABAAMABwAAAAAAAAABAAQABwAAAAAAAAABAAUABwAAAAAAAAABAAYABwAAAAAAAAABAAcABwAAAAAAAAACAAIABwABAAAAAAADAAIABwAAAAAAAAAEAAIABwAAAAAAAAAFAAIABwAAAAAAAAAGAAIABwAAAAAAAAAHAAIABwAAAAAAAAAIAAIABwAAAAAAAAAJAAIABwAAAAAAAAAKAAIABwAAAAAAAAALAAIABwAAAAAAAAAMAAIABwAAAAAAAAANAAIABwAAAAAAAAABAAgABwAAAAAAAAACAAgABwAAAAAAAAADAAgABwAAAAAAAAAEAAgABwAAAAAAAAAFAAgABwAAAAAAAAAGAAgABwAAAAAAAAAHAAgABwAAAAAAAAAIAAgABwAAAAAAAAAJAAgABwAAAAAAAAAKAAgABwAAAAAAAAALAAgABwAAAAAAAAAMAAgABwAAAAAAAAANAAgABwAAAAAAAAANAAcABwABAAAAAAANAAYABwAAAAAAAAANAAUABwAAAAAAAAANAAQABwAAAAAAAAANAAMABwAAAAAAAAACAAMABwABAAAAAAADAAMABwABAAAAAAAEAAMABwABAAAAAAAFAAMABwABAAAAAAAGAAMABwABAAAAAAAHAAMABwABAAAAAAAIAAMABwABAAAAAAAJAAMABwABAAAAAAAKAAMABwABAAAAAAALAAMABwABAAAAAAAMAAMABwABAAAAAAAMAAQABwABAAAAAAAMAAUABwABAAAAAAAMAAYABwABAAAAAAAMAAcABwABAAAAAAALAAcABwABAAAAAAAKAAcABwABAAAAAAAJAAcABwABAAAAAAAIAAcABwABAAAAAAAHAAcABwABAAAAAAAGAAcABwABAAAAAAAFAAcABwABAAAAAAAEAAcABwABAAAAAAADAAcABwABAAAAAAADAAYABwABAAAAAAACAAYABwABAAAAAAACAAUABwABAAAAAAACAAQABwABAAAAAAADAAQABwABAAAAAAAEAAQABwABAAAAAAAFAAQABwABAAAAAAAGAAQABwABAAAAAAAHAAQABwABAAAAAAAIAAQABwABAAAAAAAJAAQABwABAAAAAAAKAAQABwABAAAAAAALAAQABwABAAAAAAALAAUABwABAAAAAAALAAYABwABAAAAAAAKAAYABwABAAAAAAAJAAYABwABAAAAAAAIAAYABwABAAAAAAAIAAUABwABAAAAAAAHAAUABwABAAAAAAAGAAUABwABAAAAAAAFAAUABwABAAAAAAAEAAUABwABAAAAAAADAAUABwABAAAAAAAEAAYABwABAAAAAAAFAAYABwABAAAAAAAGAAYABwABAAAAAAAHAAYABwABAAAAAAAKAAUABwABAAAAAAAJAAUABwABAAAAAAACAAcABwABAAAAAAA=")
 tile_set = ExtResource("1_2a5fv")
@@ -44,6 +50,7 @@ texture = ExtResource("7_jer6f")
 
 [node name="sound_goal" type="AudioStreamPlayer2D" parent="goal"]
 stream = ExtResource("4_k2umb")
+bus = &"effect"
 script = ExtResource("5_d7yxj")
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -59,10 +66,12 @@ shape = SubResource("RectangleShape2D_56gcb")
 
 [node name="sound_go" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("6_tcjp5")
+bus = &"effect"
 script = ExtResource("5_d7yxj")
 
 [node name="sound_stop" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("4_45mpt")
+bus = &"effect"
 script = ExtResource("5_d7yxj")
 
 [connection signal="body_shape_entered" from="goal" to="goal" method="_on_body_shape_entered"]
