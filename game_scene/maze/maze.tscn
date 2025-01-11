@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://h3whre0d12n7"]
+[gd_scene load_steps=14 format=4 uid="uid://h3whre0d12n7"]
 
 [ext_resource type="TileSet" uid="uid://8wsraksi7ami" path="res://game_scene/maze/maze.tres" id="1_2a5fv"]
+[ext_resource type="Script" path="res://game_scene/maze/maze.gd" id="1_u7r6u"]
 [ext_resource type="AudioStream" uid="uid://cpelpli8fepfn" path="res://BGM/maze_bgm.ogg" id="1_ym271"]
 [ext_resource type="Texture2D" uid="uid://cl4cin7et0obt" path="res://image/player.png" id="2_4jhjv"]
 [ext_resource type="Script" path="res://game_scene/maze/player.gd" id="2_p6toq"]
@@ -18,13 +19,12 @@ size = Vector2(32, 32)
 size = Vector2(30.875, 31)
 
 [node name="Maze" type="Node2D"]
+script = ExtResource("1_u7r6u")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1030.0
-offset_top = 27.0
-offset_right = 1123.0
-offset_bottom = 50.0
-text = "maze_scene"
+[node name="timer" type="Label" parent="."]
+offset_left = 1024.0
+offset_right = 1064.0
+offset_bottom = 23.0
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_ym271")
