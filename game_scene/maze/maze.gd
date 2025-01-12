@@ -19,3 +19,6 @@ func _process(delta: float) -> void:
 	
 	# 更新
 	time_label.text="Time: %02d:%02d:%02d" % [hours,minutes,seconds]
+	
+func restart():
+	print("restart")
