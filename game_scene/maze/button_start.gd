@@ -9,8 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func _pressed():
-	#get_tree().change_scene_to_file("res://game_scene/maze.tscn")
-	get_tree().change_scene_to_file("res://game_scene/maze/start.tscn")
-	
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://game_scene/maze/maze.tscn")

@@ -36,7 +36,7 @@ tile_map_data = PackedByteArray("AAAhABMABwAAAAAAAAAgABMABwAAAAAAAAAfABMABwAAAAA
 tile_set = ExtResource("1_2a5fv")
 
 [node name="goal" type="Area2D" parent="."]
-position = Vector2(1120, 608)
+position = Vector2(64, 96)
 script = ExtResource("2_xme87")
 metadata/_edit_group_ = true
 

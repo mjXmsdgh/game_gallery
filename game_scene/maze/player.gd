@@ -7,6 +7,9 @@ const TILE_SIZE=32
 func _ready() -> void:
 	pass # Replace with function body.
 
+func init():
+	position=Vector2(0,32)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.

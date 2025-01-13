@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var time_label=$timer
+@onready var time_label=$timer_label
 var start_time=0
 var elapsed_time=0
 
@@ -22,3 +22,8 @@ func _process(delta: float) -> void:
 	
 func restart():
 	print("restart")
+	
+	# リザルト画面に
+	get_tree().change_scene_to_file("res://game_scene/maze/End.tscn")
+	
+	

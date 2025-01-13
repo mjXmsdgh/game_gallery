@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://uqw64v4n06ar"]
+
+[ext_resource type="Script" path="res://game_scene/maze/button_go_to_start.gd" id="1_sjnst"]
+
+[node name="End" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Result"
+
+[node name="Button_go_to_start" type="Button" parent="."]
+offset_left = 489.0
+offset_top = 266.0
+offset_right = 557.0
+offset_bottom = 297.0
+text = "go start"
+script = ExtResource("1_sjnst")
+
+[connection signal="pressed" from="Button_go_to_start" to="Button_go_to_start" method="_on_pressed"]
