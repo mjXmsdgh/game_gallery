@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://f6gjyh54pjlg"]
 
-[ext_resource type="Script" path="res://game_scene/maze/button_start.gd" id="1_kht7o"]
+[ext_resource type="Script" path="res://game_scene/maze/1_start/button_start.gd" id="1_2f8ca"]
 
 [node name="Start" type="Node2D"]
 
@@ -17,6 +17,6 @@ offset_top = 182.0
 offset_right = 344.0
 offset_bottom = 213.0
 text = "start"
-script = ExtResource("1_kht7o")
+script = ExtResource("1_2f8ca")
 
 [connection signal="pressed" from="Button_start" to="Button_start" method="_on_pressed"]

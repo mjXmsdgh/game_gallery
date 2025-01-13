@@ -10,5 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://game_scene/maze/maze.tscn")
+	get_tree().change_scene_to_file("res://game_scene/maze/1_start/start.tscn")

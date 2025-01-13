@@ -24,6 +24,6 @@ func restart():
 	print("restart")
 	
 	# リザルト画面に
-	get_tree().change_scene_to_file("res://game_scene/maze/End.tscn")
+	get_tree().change_scene_to_file("res://game_scene/maze/3_end/End.tscn")
 	
 	

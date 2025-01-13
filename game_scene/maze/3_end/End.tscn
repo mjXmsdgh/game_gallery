@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uqw64v4n06ar"]
 
-[ext_resource type="Script" path="res://game_scene/maze/button_go_to_start.gd" id="1_sjnst"]
+[ext_resource type="Script" path="res://game_scene/maze/3_end/button_go_to_start.gd" id="1_v2r8r"]
 
 [node name="End" type="Node2D"]
 position = Vector2(0, 1)
@@ -16,6 +16,6 @@ offset_top = 266.0
 offset_right = 557.0
 offset_bottom = 297.0
 text = "go start"
-script = ExtResource("1_sjnst")
+script = ExtResource("1_v2r8r")
 
 [connection signal="pressed" from="Button_go_to_start" to="Button_go_to_start" method="_on_pressed"]
