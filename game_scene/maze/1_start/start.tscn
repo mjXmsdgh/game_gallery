@@ -4,19 +4,21 @@
 
 [node name="Start" type="Node2D"]
 
-[node name="start" type="Label" parent="."]
-offset_left = 309.0
-offset_top = 128.0
-offset_right = 349.0
-offset_bottom = 151.0
-text = "start"
+[node name="title" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 121.0
+offset_right = 747.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 128
+text = "MAZE"
 
 [node name="Button_start" type="Button" parent="."]
-offset_left = 299.0
-offset_top = 182.0
-offset_right = 344.0
-offset_bottom = 213.0
-text = "start"
+offset_left = 474.0
+offset_top = 386.0
+offset_right = 673.0
+offset_bottom = 482.0
+theme_override_font_sizes/font_size = 64
+text = "START"
 script = ExtResource("1_2f8ca")
 
 [connection signal="pressed" from="Button_start" to="Button_start" method="_on_pressed"]
