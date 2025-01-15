@@ -1,14 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://uqw64v4n06ar"]
+[gd_scene load_steps=3 format=3 uid="uid://uqw64v4n06ar"]
 
+[ext_resource type="Script" path="res://game_scene/maze/3_end/clear_time.gd" id="1_g7piu"]
 [ext_resource type="Script" path="res://game_scene/maze/3_end/button_go_to_start.gd" id="1_v2r8r"]
 
 [node name="End" type="Node2D"]
 position = Vector2(0, 1)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Result"
+[node name="Clear_time" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 239.0
+offset_right = 444.0
+offset_bottom = 284.0
+theme_override_font_sizes/font_size = 32
+text = "Clear Time  "
+script = ExtResource("1_g7piu")
 
 [node name="Button_go_to_start" type="Button" parent="."]
 offset_left = 792.0

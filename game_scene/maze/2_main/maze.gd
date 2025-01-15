@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 	var minutes=int(fmod(elapsed_time,3600)/60.0)
 	var seconds=int(fmod(elapsed_time,3600))
 	
+	Grobal.clear_time=str(hours)+":"+str(minutes)+":"+str(seconds)
 	# 更新
 	time_label.text="Time: %02d:%02d:%02d" % [hours,minutes,seconds]
 	
