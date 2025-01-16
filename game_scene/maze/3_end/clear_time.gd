@@ -3,7 +3,7 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text="Clear Time  "+Grobal.clear_time
+	text="Clear Time  "+str(Grobal.clear_time)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
