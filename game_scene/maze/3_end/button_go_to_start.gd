@@ -5,7 +5,7 @@ extends Button
 func _ready() -> void:
 		# スタイルを作成
 	var stylebox=StyleBoxFlat.new()
-	stylebox.bg_color=Color(0.259,0.243,0.486)
+	stylebox.bg_color=Color(0,0,0)
 	
 	# 適用
 	add_theme_stylebox_override("normal",stylebox)
