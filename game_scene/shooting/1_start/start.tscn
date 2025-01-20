@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://l5fmsr3sskjk"]
+
+[node name="Start" type="Node2D"]
+
+[node name="Label_SHOOTING" type="Label" parent="."]
+offset_left = 409.0
+offset_top = 162.0
+offset_right = 745.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 64
+text = "SHOOTING"
+
+[node name="Button_start" type="Button" parent="."]
+offset_left = 503.0
+offset_top = 394.0
+offset_right = 702.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 64
+text = "START"
