@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfrpkgpjpb67i"]
+
+[ext_resource type="Texture2D" uid="uid://dsl46v4moajtl" path="res://image/player_shooting.png" id="1_wqbjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddsa3"]
+size = Vector2(32, 32)
+
+[node name="Main" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ddsa3")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(16, 16)
+texture = ExtResource("1_wqbjv")
+metadata/_edit_group_ = true
