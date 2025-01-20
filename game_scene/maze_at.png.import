@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck2wtf5rada2g"
-path="res://.godot/imported/maze_at.png-1e763c668c29e4d3a00d6725453c47ff.ctex"
+path="res://.godot/imported/maze_at.png-081e539e910a83495e34036e562fa97b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maze_at.png"
-dest_files=["res://.godot/imported/maze_at.png-1e763c668c29e4d3a00d6725453c47ff.ctex"]
+source_file="res://game_scene/maze_at.png"
+dest_files=["res://.godot/imported/maze_at.png-081e539e910a83495e34036e562fa97b.ctex"]
 
 [params]
 
