@@ -20,11 +20,14 @@ texture = ExtResource("1_wqbjv")
 metadata/_edit_group_ = true
 
 [node name="bullet" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
 position = Vector2(16.5, 15.5)
 shape = SubResource("RectangleShape2D_1pd3p")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="bullet"]
 position = Vector2(16, 16)
 texture = ExtResource("2_qar1d")
+metadata/_edit_group_ = true
