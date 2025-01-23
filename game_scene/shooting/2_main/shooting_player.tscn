@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dsl46v4moajtl" path="res://image/player_shooting.png" id="1_uedon"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(320, 64)
 script = ExtResource("1_lgjgg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
