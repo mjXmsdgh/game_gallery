@@ -3,27 +3,6 @@ extends CharacterBody2D
 
 const TILE_SIZE=32
 
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#var velocity = Vector2.ZERO # The player's movement vector.
-	#
-	## キー入力
-	#if Input.is_action_just_pressed("ui_right"):
-		#velocity.x += 1
-	#if Input.is_action_just_pressed("ui_left"):
-		#velocity.x -= 1
-	#if Input.is_action_just_pressed("ui_down"):
-		#velocity.y += 1
-	#if Input.is_action_just_pressed("ui_up"):
-		#velocity.y -= 1
-		#
-	## 入力なし
-	#if (velocity.x==0)and(velocity.y==0):
-		#return
-	#
-	## 移動処理
-	#move(velocity);
 
 func move(velocity: Vector2) -> void:
 	
