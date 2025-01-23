@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu61qy15wau5q"]
+
+[ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/shooting_player.tscn" id="1_5qfi7"]
+
+[node name="TestPlayer" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_5qfi7")]
+position = Vector2(512, 192)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button_up" type="Button" parent="Node2D"]
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 152.0
+offset_bottom = 191.0
+text = "↑"
+
+[node name="Button_down" type="Button" parent="Node2D"]
+offset_left = 128.0
+offset_top = 224.0
+offset_right = 152.0
+offset_bottom = 255.0
+text = "↓"
+
+[node name="Button_left" type="Button" parent="Node2D"]
+offset_left = 96.0
+offset_top = 192.0
+offset_right = 120.0
+offset_bottom = 223.0
+text = "←"
+
+[node name="Button_right" type="Button" parent="Node2D"]
+offset_left = 160.0
+offset_top = 192.0
+offset_right = 184.0
+offset_bottom = 223.0
+text = "→"
+
+[connection signal="pressed" from="Node2D/Button_up" to="CharacterBody2D" method="_on_button_up_pressed"]
+[connection signal="pressed" from="Node2D/Button_down" to="CharacterBody2D" method="_on_button_down_pressed"]
+[connection signal="pressed" from="Node2D/Button_left" to="CharacterBody2D" method="_on_button_left_pressed"]
+[connection signal="pressed" from="Node2D/Button_right" to="CharacterBody2D" method="_on_button_right_pressed"]
