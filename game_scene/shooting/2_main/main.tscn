@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfrpkgpjpb67i"]
+[gd_scene load_steps=5 format=3 uid="uid://bfrpkgpjpb67i"]
 
 [ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/shooting_player.tscn" id="1_exq3t"]
+[ext_resource type="Script" path="res://game_scene/shooting/2_main/main.gd" id="1_jcbtw"]
 [ext_resource type="Texture2D" uid="uid://d2e27gpabm5oo" path="res://image/bullet.png" id="2_qar1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1pd3p"]
 size = Vector2(9, 31)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jcbtw")
 
 [node name="player" parent="." instance=ExtResource("1_exq3t")]
 
