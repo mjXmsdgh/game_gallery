@@ -37,7 +37,15 @@ offset_right = 184.0
 offset_bottom = 223.0
 text = "→"
 
+[node name="Button_shoot" type="Button" parent="Node2D"]
+offset_left = 224.0
+offset_top = 234.0
+offset_right = 276.0
+offset_bottom = 265.0
+text = "shoot"
+
 [connection signal="pressed" from="Node2D/Button_up" to="CharacterBody2D" method="_on_button_up_pressed"]
 [connection signal="pressed" from="Node2D/Button_down" to="CharacterBody2D" method="_on_button_down_pressed"]
 [connection signal="pressed" from="Node2D/Button_left" to="CharacterBody2D" method="_on_button_left_pressed"]
 [connection signal="pressed" from="Node2D/Button_right" to="CharacterBody2D" method="_on_button_right_pressed"]
+[connection signal="pressed" from="Node2D/Button_shoot" to="CharacterBody2D" method="_on_button_shoot_pressed"]

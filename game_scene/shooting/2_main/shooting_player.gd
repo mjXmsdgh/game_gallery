@@ -46,3 +46,7 @@ func _on_button_left_pressed() -> void:
 func _on_button_right_pressed() -> void:
 	var velocity=Vector2(+1,0)
 	self.move(velocity)
+
+
+func _on_button_shoot_pressed() -> void:
+	print("test")
