@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var BulletScene=preload("res://game_scene/shooting/2_main/bullet.tscn")
 
 const TILE_SIZE=32
 
@@ -28,6 +28,18 @@ func move(velocity: Vector2) -> void:
 	position=new_position
 
 
+func shoot() -> void:
+	print("shoot")
+	var bullet_instance=BulletScene.instantiate()
+	
+	if bullet_instance==null:
+		print("error")
+		return
+
+	bullet_instance.position=Vector2(0,0)
+	get_parent().add_child(bullet_instance)
+
+
 func _on_button_up_pressed() -> void:
 	var velocity=Vector2(0,-1)
 	self.move(velocity)
@@ -49,4 +61,4 @@ func _on_button_right_pressed() -> void:
 
 
 func _on_button_shoot_pressed() -> void:
-	print("test")
+	self.shoot()
