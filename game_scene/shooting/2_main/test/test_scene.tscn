@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu61qy15wau5q"]
+[gd_scene load_steps=3 format=3 uid="uid://cu61qy15wau5q"]
 
 [ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/shooting_player.tscn" id="1_5qfi7"]
+[ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://game_scene/shooting/2_main/enemy.tscn" id="2_aijoi"]
 
 [node name="TestPlayer" type="Node2D"]
 
@@ -43,6 +44,9 @@ offset_top = 234.0
 offset_right = 276.0
 offset_bottom = 265.0
 text = "shoot"
+
+[node name="enemy" parent="." instance=ExtResource("2_aijoi")]
+position = Vector2(480, 64)
 
 [connection signal="pressed" from="Node2D/Button_up" to="CharacterBody2D" method="_on_button_up_pressed"]
 [connection signal="pressed" from="Node2D/Button_down" to="CharacterBody2D" method="_on_button_down_pressed"]
