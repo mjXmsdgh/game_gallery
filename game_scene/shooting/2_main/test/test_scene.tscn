@@ -6,7 +6,7 @@
 [node name="TestPlayer" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_5qfi7")]
-position = Vector2(512, 192)
+position = Vector2(480, 192)
 
 [node name="Node2D" type="Node2D" parent="."]
 
