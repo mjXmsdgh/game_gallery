@@ -13,4 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	print("!!!")
+	area.delete()
+	queue_free()
 	pass # Replace with function body.

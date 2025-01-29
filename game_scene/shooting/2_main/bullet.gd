@@ -14,3 +14,5 @@ func _process(delta: float) -> void:
 	if position.y>get_viewport_rect().size.y:
 		queue_free()
 	
+func delete() -> void:
+	queue_free()
