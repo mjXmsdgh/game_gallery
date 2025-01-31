@@ -1,27 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfrpkgpjpb67i"]
+[gd_scene load_steps=3 format=3 uid="uid://bfrpkgpjpb67i"]
 
 [ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/shooting_player.tscn" id="1_exq3t"]
 [ext_resource type="Script" path="res://game_scene/shooting/2_main/main.gd" id="1_jcbtw"]
-[ext_resource type="Texture2D" uid="uid://d2e27gpabm5oo" path="res://image/bullet.png" id="2_qar1d"]
-[ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://game_scene/shooting/2_main/enemy.tscn" id="4_rtglj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pd3p"]
-size = Vector2(9, 31)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jcbtw")
 
 [node name="player" parent="." instance=ExtResource("1_exq3t")]
-
-[node name="bullet" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
-position = Vector2(16.5, 15.5)
-shape = SubResource("RectangleShape2D_1pd3p")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="bullet"]
-position = Vector2(16, 16)
-texture = ExtResource("2_qar1d")
-
-[node name="enemy" parent="." instance=ExtResource("4_rtglj")]
+position = Vector2(640, 448)
