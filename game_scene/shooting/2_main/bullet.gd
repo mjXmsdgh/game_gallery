@@ -10,9 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position.y=position.y-speed*delta
 	
-	# 画面外に出たら弾を削除する
-	if position.y>get_viewport_rect().size.y:
-		queue_free()
-	
 func delete() -> void:
 	queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	#カメラの外に出たので削除
+	delete()
