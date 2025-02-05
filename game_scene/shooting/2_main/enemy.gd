@@ -20,3 +20,5 @@ func _on_area_entered(area: Area2D) -> void:
 	# Mainノードを取得
 	var Main_node=get_tree().root.get_child(1)
 	
+	Main_node.add_score(100)
+	
