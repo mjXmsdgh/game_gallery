@@ -56,3 +56,11 @@ position = Vector2(320, -144)
 
 [node name="enemy3" parent="enemy_list/3piece3" instance=ExtResource("4_nqb3a")]
 position = Vector2(864, -144)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 480.0
+offset_top = -96.0
+offset_right = 526.0
+offset_bottom = -68.0
+theme_override_font_sizes/font_size = 20
+text = "0000"

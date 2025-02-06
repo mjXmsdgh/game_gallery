@@ -3,9 +3,13 @@ extends Node2D
 var time=0
 var score=0
 
+func update_score() -> void:
+	$ScoreLabel.text=str(score)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	update_score()
 	pass # Replace with function body.
 
 
@@ -32,3 +36,4 @@ func _process(delta: float) -> void:
 		
 func add_score(input_score: int) -> void:
 	score=score+input_score
+	update_score()

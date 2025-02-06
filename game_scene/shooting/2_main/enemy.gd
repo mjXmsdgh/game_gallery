@@ -15,7 +15,6 @@ func _on_area_entered(area: Area2D) -> void:
 	# 弾が当たったので弾を消して自分も消える
 	area.delete()
 	queue_free()
-	print("get score")
 	
 	# Mainノードを取得
 	var Main_node=get_tree().root.get_child(1)
