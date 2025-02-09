@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		$player._on_button_right_pressed()
 	elif Input.is_action_just_pressed("key_space"):
 		$player.shoot()
-		print(score)
 		
 	time=time+delta
 	
