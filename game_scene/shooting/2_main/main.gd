@@ -4,7 +4,7 @@ var time=0
 var score=0
 
 func update_score() -> void:
-	$ScoreLabel.text=str(score)
+	$CanvasLayer/ScoreLabel.text=str(score)
 
 
 # Called when the node enters the scene tree for the first time.
