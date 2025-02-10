@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://b5ig2fdnurrvw" path="res://game_scene/shooting/2_main/new_tile_set.tres" id="3_0cvna"]
 [ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://game_scene/shooting/2_main/enemy/enemy.tscn" id="4_nqb3a"]
 [ext_resource type="PackedScene" uid="uid://c2sxlvuavtsji" path="res://game_scene/shooting/2_main/bullet/bullet.tscn" id="4_sscwg"]
-[ext_resource type="PackedScene" uid="uid://c25tfpjx5rkb4" path="res://game_scene/shooting/2_main/goal_flag.tscn" id="5_jvqk2"]
+[ext_resource type="PackedScene" uid="uid://c25tfpjx5rkb4" path="res://game_scene/shooting/2_main/goal_flag/goal_flag.tscn" id="5_jvqk2"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jcbtw")
