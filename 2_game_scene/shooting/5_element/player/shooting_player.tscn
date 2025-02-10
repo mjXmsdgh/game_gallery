@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1anwtx6pv6p1"]
+
+[ext_resource type="Script" path="res://2_game_scene/shooting/5_element/player/shooting_player.gd" id="1_lgjgg"]
+[ext_resource type="Texture2D" uid="uid://dsl46v4moajtl" path="res://3_asset/image/player_shooting.png" id="1_uedon"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(320, 64)
+script = ExtResource("1_lgjgg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, 0, 32, 32, 0, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_uedon")
+metadata/_edit_group_ = true

@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="game_gallery"
-run/main_scene="res://main/main.tscn"
+run/main_scene="res://1_main/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://2_game_scene/maze/default_bus_layout.tres"
+
 [autoload]
 
-Grobal="*res://game_scene/maze/Grobal.gd"
+Grobal="*res://2_game_scene/maze/Grobal.gd"
 
 [input]
 
