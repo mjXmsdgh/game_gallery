@@ -1,22 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://m56kp0wew0pd"]
+[gd_scene load_steps=5 format=3 uid="uid://m56kp0wew0pd"]
 
 [ext_resource type="Script" path="res://1_main/button_shooting.gd" id="1_b0kw8"]
 [ext_resource type="Script" path="res://1_main/button_to_maze.gd" id="2_03fhe"]
+[ext_resource type="PackedScene" uid="uid://l5fmsr3sskjk" path="res://2_game_scene/shooting/1_start/start.tscn" id="2_q1tgt"]
+[ext_resource type="PackedScene" uid="uid://f6gjyh54pjlg" path="res://2_game_scene/maze/1_start/start.tscn" id="3_ixnww"]
 
 [node name="main" type="Node2D"]
 
-[node name="Button_to_three_match" type="Button" parent="."]
+[node name="Button_to_shooting" type="Button" parent="."]
 offset_left = 285.0
 offset_top = 159.0
 offset_right = 411.0
 offset_bottom = 190.0
 text = "to shooting"
 script = ExtResource("1_b0kw8")
+shootingScene = ExtResource("2_q1tgt")
 
-[node name="Button_to_shooting" type="Button" parent="."]
+[node name="Button_to_maze" type="Button" parent="."]
 offset_left = 89.0
 offset_top = 160.0
 offset_right = 159.0
 offset_bottom = 191.0
 text = "to maze"
 script = ExtResource("2_03fhe")
+MazeScene = ExtResource("3_ixnww")
