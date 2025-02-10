@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bfrpkgpjpb67i"]
 
 [ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/player/shooting_player.tscn" id="1_exq3t"]
-[ext_resource type="Script" path="res://game_scene/shooting/2_main/main.gd" id="1_jcbtw"]
+[ext_resource type="Script" path="res://game_scene/shooting/2_main/main/main.gd" id="1_jcbtw"]
 [ext_resource type="TileSet" uid="uid://b5ig2fdnurrvw" path="res://game_scene/shooting/2_main/new_tile_set.tres" id="3_0cvna"]
 [ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://game_scene/shooting/2_main/enemy/enemy.tscn" id="4_nqb3a"]
 [ext_resource type="PackedScene" uid="uid://c2sxlvuavtsji" path="res://game_scene/shooting/2_main/bullet/bullet.tscn" id="4_sscwg"]
