@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c25tfpjx5rkb4"]
 
-[ext_resource type="Script" path="res://game_scene/shooting/2_main/goal_flag/goal_flag.gd" id="1_434au"]
+[ext_resource type="Script" path="res://game_scene/shooting/5_element/goal_flag/goal_flag.gd" id="1_434au"]
 [ext_resource type="Texture2D" uid="uid://c6vwjyhaechpx" path="res://image/flag.png" id="2_4tnoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5pab"]

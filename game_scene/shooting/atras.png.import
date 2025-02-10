@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqq2owok16gt0"
-path="res://.godot/imported/atras.png-5bc0105e3e077fbb45e80c864781dbfc.ctex"
+path="res://.godot/imported/atras.png-f8821a78d827c6e3461d46c2c2d22b29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_scene/shooting/2_main/atras.png"
-dest_files=["res://.godot/imported/atras.png-5bc0105e3e077fbb45e80c864781dbfc.ctex"]
+source_file="res://game_scene/shooting/atras.png"
+dest_files=["res://.godot/imported/atras.png-f8821a78d827c6e3461d46c2c2d22b29.ctex"]
 
 [params]
 
