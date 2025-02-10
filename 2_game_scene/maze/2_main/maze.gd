@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var time_label=$timer_label
+@export var end_scene:PackedScene
 var start_time=0
 var elapsed_time=0
 
@@ -28,4 +29,13 @@ func restart():
 	call_deferred("change_scene")
 	
 func change_scene():
-		get_tree().change_scene_to_file("res://game_scene/maze/3_end/End.tscn")
+
+	# mazeを実体化
+	var end_instance:Node=end_scene.instantiate()
+
+	# 子ノードに追加
+	var root:Node=get_tree().get_root()
+	root.add_child(end_instance)
+
+	# 終わったら開放
+	get_tree().current_scene.queue_free()	
