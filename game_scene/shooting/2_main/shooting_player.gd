@@ -1,5 +1,7 @@
 extends CharacterBody2D
-var BulletScene=preload("res://game_scene/shooting/2_main/bullet.tscn")
+#var BulletScene=preload("res://game_scene/shooting/2_main/bullet.tscn")
+
+@export var BulletScene: PackedScene
 
 const TILE_SIZE=32
 

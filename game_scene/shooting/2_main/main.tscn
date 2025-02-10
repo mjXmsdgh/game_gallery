@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bfrpkgpjpb67i"]
+[gd_scene load_steps=7 format=4 uid="uid://bfrpkgpjpb67i"]
 
 [ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://game_scene/shooting/2_main/shooting_player.tscn" id="1_exq3t"]
 [ext_resource type="Script" path="res://game_scene/shooting/2_main/main.gd" id="1_jcbtw"]
 [ext_resource type="TileSet" uid="uid://b5ig2fdnurrvw" path="res://game_scene/shooting/2_main/new_tile_set.tres" id="3_0cvna"]
 [ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://game_scene/shooting/2_main/enemy.tscn" id="4_nqb3a"]
+[ext_resource type="PackedScene" uid="uid://c2sxlvuavtsji" path="res://game_scene/shooting/2_main/bullet/bullet.tscn" id="4_sscwg"]
 [ext_resource type="PackedScene" uid="uid://c25tfpjx5rkb4" path="res://game_scene/shooting/2_main/goal_flag.tscn" id="5_jvqk2"]
 
 [node name="Main" type="Node2D"]
@@ -29,6 +30,7 @@ tile_set = ExtResource("3_0cvna")
 
 [node name="player" parent="." instance=ExtResource("1_exq3t")]
 position = Vector2(672, 864)
+BulletScene = ExtResource("4_sscwg")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(32, -224)
