@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://2_game_scene/maze/1_start/button_start.gd" id="1_2f8ca"]
 [ext_resource type="TileSet" uid="uid://8wsraksi7ami" path="res://2_game_scene/maze/2_main/maze.tres" id="1_2o2af"]
-[ext_resource type="PackedScene" uid="uid://h3whre0d12n7" path="res://2_game_scene/maze/2_main/maze.tscn" id="3_1lxaa"]
+[ext_resource type="PackedScene" uid="uid://h3whre0d12n7" path="res://2_game_scene/maze/2_main/maze.tscn" id="3_f18bs"]
 
 [node name="Start" type="Node2D"]
 
@@ -26,6 +26,6 @@ offset_bottom = 481.0
 theme_override_font_sizes/font_size = 64
 text = "→ START"
 script = ExtResource("1_2f8ca")
-main_scene = ExtResource("3_1lxaa")
+main_scene = ExtResource("3_f18bs")
 
 [connection signal="pressed" from="Button_start" to="Button_start" method="_on_pressed"]
