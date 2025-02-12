@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cb7pry0ubjp2t"]
+
+[ext_resource type="Texture2D" uid="uid://bagwqw12u0gy8" path="res://2_game_scene/maze_new/asset/maze_at.png" id="1_y2fke"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wdi35"]
+texture = ExtResource("1_y2fke")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_wdi35")
