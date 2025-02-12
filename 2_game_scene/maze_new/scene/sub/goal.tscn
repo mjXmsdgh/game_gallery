@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbq56n4hkky5t"]
+
+[ext_resource type="Script" path="res://2_game_scene/maze_new/script/goal.gd" id="1_3beba"]
+[ext_resource type="Texture2D" uid="uid://c6vwjyhaechpx" path="res://3_asset/image/flag.png" id="1_ffbbo"]
+[ext_resource type="AudioStream" uid="uid://dolpp8rx2wa3k" path="res://3_asset/sound/fanfare.ogg" id="2_2qihy"]
+[ext_resource type="Script" path="res://2_game_scene/maze_new/script/sound_play.gd" id="3_32lk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ilk"]
+size = Vector2(31.9531, 31.9531)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_3beba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_u6ilk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_ffbbo")
+
+[node name="sound_goal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2qihy")
+script = ExtResource("3_32lk1")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

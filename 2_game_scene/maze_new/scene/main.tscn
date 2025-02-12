@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://lgqxogw0ppuj"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Label_timer" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
