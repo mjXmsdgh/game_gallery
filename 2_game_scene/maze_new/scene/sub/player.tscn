@@ -24,6 +24,6 @@ shape = SubResource("RectangleShape2D_sgx8r")
 stream = ExtResource("2_o7swm")
 script = ExtResource("3_4gvbu")
 
-[node name="soud_stop" type="AudioStreamPlayer2D" parent="."]
+[node name="sound_stop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_efllo")
 script = ExtResource("3_4gvbu")
