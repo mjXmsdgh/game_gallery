@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://lgqxogw0ppuj"]
+[gd_scene load_steps=5 format=4 uid="uid://lgqxogw0ppuj"]
+
+[ext_resource type="PackedScene" uid="uid://bd64e25pco4k5" path="res://2_game_scene/maze_new/scene/sub/player.tscn" id="1_1ydoa"]
+[ext_resource type="AudioStream" uid="uid://cpelpli8fepfn" path="res://3_asset/BGM/maze_bgm.ogg" id="1_cu5j1"]
+[ext_resource type="TileSet" uid="uid://cb7pry0ubjp2t" path="res://2_game_scene/maze_new/asset/new_tile_set.tres" id="2_26si0"]
+[ext_resource type="PackedScene" uid="uid://cbq56n4hkky5t" path="res://2_game_scene/maze_new/scene/sub/goal.tscn" id="2_t8rgs"]
 
 [node name="Main" type="Node2D"]
 
@@ -7,5 +12,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_cu5j1")
+autoplay = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAABAAIABwAAAAAAAAACAAIABwAAAAAAAAADAAIABwAAAAAAAAAEAAIABwABAAAAAAAFAAIABwABAAAAAAAGAAIABwABAAAAAAA=")
+tile_set = ExtResource("2_26si0")
+
+[node name="player" parent="." instance=ExtResource("1_1ydoa")]
+position = Vector2(32, 128)
+
+[node name="goal" parent="." instance=ExtResource("2_t8rgs")]
+position = Vector2(192, 288)
