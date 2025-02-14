@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c4n6r4r22qiab"]
+
+[ext_resource type="Texture2D" uid="uid://bagwqw12u0gy8" path="res://2_game_scene/maze_new/asset/maze_at.png" id="1_pannk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6vew"]
+texture = ExtResource("1_pannk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.6, -9.6, 9.6, -9.6, 9.6, 9.6, -9.6, 9.6)
+1:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_u6vew")

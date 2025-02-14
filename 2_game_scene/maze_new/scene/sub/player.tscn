@@ -12,13 +12,13 @@ size = Vector2(32, 32)
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_carq1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, 16)
-texture = ExtResource("1_seml8")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_sgx8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_seml8")
 
 [node name="sound_go" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_o7swm")
