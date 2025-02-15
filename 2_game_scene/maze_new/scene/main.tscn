@@ -20,7 +20,6 @@ stream = ExtResource("1_cu5j1")
 autoplay = true
 
 [node name="player" parent="." instance=ExtResource("1_1ydoa")]
-position = Vector2(32, 128)
 
 [node name="goal" parent="." instance=ExtResource("2_t8rgs")]
 position = Vector2(192, 288)
