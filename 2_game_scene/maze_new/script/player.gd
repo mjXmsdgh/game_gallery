@@ -1,13 +1,11 @@
 extends CharacterBody2D
-const TILE_SIZE=32
+const TILE_SIZE:int=32
 
-#const SPEED = 300.0
-#const JUMP_VELOCITY = -400.0
-@onready var sound_go=$sound_go
-@onready var sound_stop=$sound_stop
+@onready var sound_go:AudioStreamPlayer2D=$sound_go
+@onready var sound_stop:AudioStreamPlayer2D=$sound_stop
 
 func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO # The player's movement vector.
+	var velocity:Vector2 = Vector2.ZERO # The player's movement vector.
 	
 	# キー入力
 	if Input.is_action_just_pressed("ui_right"):
@@ -24,7 +22,7 @@ func _process(delta: float) -> void:
 		return
 
 	# 移動量を計算
-	var move_value=	velocity*TILE_SIZE
+	var move_value:Vector2=	velocity*TILE_SIZE
 
 	# 移動チェック	
 	if test_move(global_transform,move_value):
@@ -32,7 +30,7 @@ func _process(delta: float) -> void:
 		return
 
 	# 新しい位置
-	var new_position = position+move_value
+	var new_position:Vector2 = position+move_value
 		
 	# 新しい位置をタイルのグリッドに合わせて丸める
 	new_position.x = round(new_position.x / TILE_SIZE) * TILE_SIZE
