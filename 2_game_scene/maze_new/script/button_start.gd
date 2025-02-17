@@ -13,13 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-
-	# mazeを実体化
-	var main_instance:Node=main_scene.instantiate()
-
-	# 子ノードに追加
-	var root:Node=get_tree().get_root()
-	root.add_child(main_instance)
-
-	# 終わったら開放
-	get_tree().current_scene.queue_free()	
+	
+	# mainに遷移
+	get_tree().change_scene_to_file("res://2_game_scene/maze_new/scene/main.tscn")
