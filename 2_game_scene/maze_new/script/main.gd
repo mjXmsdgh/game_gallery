@@ -10,7 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func change_scene()->void:
+	call_deferred("change_scene_deferred")
 	
+	
+func change_scene_deferred():
+
 	# 終了画面に変更
 	get_tree().change_scene_to_file("res://2_game_scene/maze_new/scene/end.tscn")
