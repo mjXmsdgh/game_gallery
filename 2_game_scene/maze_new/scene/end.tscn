@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://0202sc1oi2mi"]
+[gd_scene load_steps=3 format=4 uid="uid://0202sc1oi2mi"]
 
 [ext_resource type="TileSet" uid="uid://c4n6r4r22qiab" path="res://2_game_scene/maze_new/asset/maze_atras.tres" id="1_wu01c"]
+[ext_resource type="Script" path="res://2_game_scene/maze_new/script/button_go_to_start.gd" id="2_khpn1"]
 
 [node name="End" type="Node2D"]
 
@@ -23,3 +24,6 @@ offset_right = 926.0
 offset_bottom = 459.0
 theme_override_font_sizes/font_size = 48
 text = "→ Start Screen"
+script = ExtResource("2_khpn1")
+
+[connection signal="pressed" from="Button_go_to_start" to="Button_go_to_start" method="_on_pressed"]
