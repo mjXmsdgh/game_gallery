@@ -1,6 +1,5 @@
 extends Button
 
-@export var main_scene:PackedScene;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	
 	# mainに遷移
-	get_tree().change_scene_to_file("res://2_game_scene/maze_new/scene/main.tscn")
+	get_tree().change_scene_to_file("res://2_game_scene/maze/scene/start.tscn")

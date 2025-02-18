@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://0202sc1oi2mi"]
 
-[ext_resource type="TileSet" uid="uid://c4n6r4r22qiab" path="res://2_game_scene/maze_new/asset/maze_atras.tres" id="1_wu01c"]
-[ext_resource type="Script" path="res://2_game_scene/maze_new/script/button_go_to_start.gd" id="2_khpn1"]
+[ext_resource type="TileSet" uid="uid://c4n6r4r22qiab" path="res://2_game_scene/maze/asset/maze_atras.tres" id="1_wu01c"]
+[ext_resource type="Script" path="res://2_game_scene/maze/script/button_go_to_start.gd" id="2_khpn1"]
 
 [node name="End" type="Node2D"]
 

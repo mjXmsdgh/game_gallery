@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbq56n4hkky5t"]
 
-[ext_resource type="Script" path="res://2_game_scene/maze_new/script/goal.gd" id="1_3beba"]
+[ext_resource type="Script" path="res://2_game_scene/maze/script/goal.gd" id="1_3beba"]
 [ext_resource type="Texture2D" uid="uid://c6vwjyhaechpx" path="res://3_asset/image/flag.png" id="1_ffbbo"]
 [ext_resource type="AudioStream" uid="uid://dolpp8rx2wa3k" path="res://3_asset/sound/fanfare.ogg" id="2_2qihy"]
-[ext_resource type="Script" path="res://2_game_scene/maze_new/script/sound_play.gd" id="3_32lk1"]
+[ext_resource type="Script" path="res://2_game_scene/maze/script/sound_play.gd" id="3_32lk1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ilk"]
 size = Vector2(31, 31)

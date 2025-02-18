@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bd64e25pco4k5"]
 
-[ext_resource type="Script" path="res://2_game_scene/maze_new/script/player.gd" id="1_carq1"]
+[ext_resource type="Script" path="res://2_game_scene/maze/script/player.gd" id="1_carq1"]
 [ext_resource type="Texture2D" uid="uid://cl4cin7et0obt" path="res://3_asset/image/player.png" id="1_seml8"]
 [ext_resource type="AudioStream" uid="uid://b1obua6ux87bg" path="res://3_asset/sound/go.ogg" id="2_o7swm"]
-[ext_resource type="Script" path="res://2_game_scene/maze_new/script/sound_play.gd" id="3_4gvbu"]
+[ext_resource type="Script" path="res://2_game_scene/maze/script/sound_play.gd" id="3_4gvbu"]
 [ext_resource type="AudioStream" uid="uid://db4nbqfl1nj11" path="res://3_asset/sound/stop.ogg" id="3_efllo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgx8r"]
