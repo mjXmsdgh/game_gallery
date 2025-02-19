@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://lgqxogw0ppuj"]
+[gd_scene load_steps=6 format=3 uid="uid://lgqxogw0ppuj"]
 
 [ext_resource type="PackedScene" uid="uid://bd64e25pco4k5" path="res://2_game_scene/maze/scene/sub/player.tscn" id="1_1ydoa"]
 [ext_resource type="Script" path="res://2_game_scene/maze/script/main.gd" id="1_811lb"]
 [ext_resource type="AudioStream" uid="uid://cpelpli8fepfn" path="res://3_asset/BGM/maze_bgm.ogg" id="1_cu5j1"]
 [ext_resource type="TileSet" uid="uid://c4n6r4r22qiab" path="res://2_game_scene/maze/asset/maze_atras.tres" id="1_nab4a"]
-[ext_resource type="PackedScene" uid="uid://0202sc1oi2mi" path="res://2_game_scene/maze/scene/end.tscn" id="2_k2pg0"]
 [ext_resource type="PackedScene" uid="uid://cbq56n4hkky5t" path="res://2_game_scene/maze/scene/sub/goal.tscn" id="2_t8rgs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_811lb")
-end_scene = ExtResource("2_k2pg0")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 0, 3, 0, 1, 0, 0, 0, 0, 0, 4, 0, 2, 0, 3, 0, 1, 0, 0, 0, 0, 0)
