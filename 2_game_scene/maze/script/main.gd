@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scene_path="res://2_game_scene/maze/scene/end.tscn"
+@export var scene_path:String="res://2_game_scene/maze/scene/end.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
