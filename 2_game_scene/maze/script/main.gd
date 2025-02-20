@@ -18,5 +18,7 @@ func change_scene()->void:
 	
 func change_scene_deferred():
 
+	Global.set_score(100)
+
 	# 終了画面に変更
 	get_tree().change_scene_to_file(scene_path)

@@ -1,9 +1,9 @@
-extends Button
+extends Node
+
+var score:int=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var score=Global.get_score()
-	print(score)
 	pass # Replace with function body.
 
 
@@ -11,7 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_pressed() -> void:
-	# mainに遷移
-	get_tree().change_scene_to_file("res://2_game_scene/maze/scene/start.tscn")
+func set_score(input_score:int)->void:
+	score=input_score
+	
+func get_score()->int:
+	return score
