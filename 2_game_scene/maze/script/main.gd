@@ -7,12 +7,15 @@ var elapsed_time:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Label_timer.text="0"
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	elapsed_time=Time.get_ticks_msec()-start_time
+	elapsed_time=elapsed_time/1000.0
+	$Label_timer.text=str(elapsed_time)
 
 
 func change_scene()->void:
