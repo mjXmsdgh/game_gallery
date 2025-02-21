@@ -2,8 +2,8 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var score=Global.get_score()
-	print(score)
+	var time:String=Global.get_time()
+	print(time)
 	pass # Replace with function body.
 
 

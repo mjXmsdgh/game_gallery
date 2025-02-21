@@ -1,6 +1,6 @@
 extends Node
 
-var score:int=0
+var clear_time:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func set_score(input_score:int)->void:
-	score=input_score
+func set_time(input_time:String)->void:
+	clear_time=input_time
 	
-func get_score()->int:
-	return score
+func get_time()->String:
+	return clear_time
