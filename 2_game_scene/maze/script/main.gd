@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var scene_path:String="res://2_game_scene/maze/scene/end.tscn"
+signal main_to_end
 
 var start_time:int=Time.get_ticks_msec()
 var elapsed_time:int
@@ -20,7 +21,9 @@ func _process(delta: float) -> void:
 
 func change_scene()->void:
 	elapsed_time=Time.get_ticks_msec()-start_time
-	call_deferred("change_scene_deferred")
+	
+	emit_signal("main_to_end")
+	#call_deferred("change_scene_deferred")
 	
 	
 func change_scene_deferred():

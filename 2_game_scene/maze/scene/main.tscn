@@ -28,4 +28,4 @@ autoplay = true
 position = Vector2(64, 96)
 
 [node name="goal" parent="." instance=ExtResource("2_t8rgs")]
-position = Vector2(1088, 576)
+position = Vector2(96, 160)
