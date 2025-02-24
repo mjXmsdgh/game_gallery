@@ -1,5 +1,6 @@
 extends Node2D
 
+signal change_to_main
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://2_game_scene/maze/scene/main.tscn")
+	
+	# シグナル発信
+	emit_signal("change_to_main")

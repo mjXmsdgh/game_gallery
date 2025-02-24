@@ -3,21 +3,20 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	show_start_scene()
-
-
+	# シグナル
+	$Start.connect("change_to_main",start_to_main)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
-
-func show_start_scene()->void:
-	$Start.visible=true
+func start_to_main()->void:
 	
-	$Main.visible=false
-	$Main.process_mode=Node.PROCESS_MODE_DISABLED
+	# mainシーンをload
+	var main_scene:Node=load("res://2_game_scene/maze/scene/main.tscn").instantiate()
 	
-	$End.visible=false
-	$End.process_mode=Node.PROCESS_MODE_DISABLED
+	# 子ノードに追加
+	add_child(main_scene)
 	
+	# Startノードを開放
+	$Start.queue_free()
