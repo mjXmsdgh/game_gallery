@@ -1,5 +1,6 @@
 extends Node2D
 
+signal end_to_start
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +16,5 @@ func _process(delta: float) -> void:
 
 
 func _on_button_go_to_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://2_game_scene/maze/scene/start.tscn")
+	emit_signal("end_to_start")
+	#get_tree().change_scene_to_file("res://2_game_scene/maze/scene/start.tscn")

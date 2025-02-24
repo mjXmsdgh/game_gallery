@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 func change_scene()->void:
 	elapsed_time=Time.get_ticks_msec()-start_time
 	
+	var sec=elapsed_time/1000.0
+	Global.set_time((str(sec)))
+	
 	emit_signal("main_to_end")
 	#call_deferred("change_scene_deferred")
 	

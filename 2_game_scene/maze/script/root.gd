@@ -27,14 +27,23 @@ func start_to_main()->void:
 	$Start.queue_free()
 
 func main_to_end()->void:
-	print("main_to_end")
-	
 	# endシーンをload
 	var end_scene:Node=load("res://2_game_scene/maze/scene/end.tscn").instantiate()
 	
 	# 子ノードに追加
 	add_child(end_scene)
 	
-	#$End.connect("main_to_end",)
+	$End.connect("end_to_start",end_to_main)
 	
 	$Main.queue_free()
+
+
+func end_to_main()->void:
+	
+	var start_scene:Node=load("res://2_game_scene/maze/scene/start.tscn").instantiate()
+	
+	add_child(start_scene)
+	
+	$Start.connect("change_to_main",start_to_main)
+	
+	$End.queue_free()
