@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var start_scene_resource:PackedScene  # start
-@export var main_scene_resource:PackedScene   # main
-@export var end_scene_resource:PackedScene    # end
+const StartScene:PackedScene=preload("res://2_game_scene/maze/scene/start.tscn")
+const MainScene:PackedScene=preload("res://2_game_scene/maze/scene/main.tscn")
+const EndScene:PackedScene=preload("res://2_game_scene/maze/scene/end.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 	
 func start_to_main()->void:
 	
-	# mainシーンをload
-	var main_scene:Node=main_scene_resource.instantiate()
+	# mainシーンを実体化
+	var main_scene:Node=MainScene.instantiate()
 	
 	# 子ノードに追加
 	add_child(main_scene)
@@ -29,8 +29,9 @@ func start_to_main()->void:
 	$Start.queue_free()
 
 func main_to_end()->void:
-	# endシーンをload
-	var end_scene:Node=end_scene_resource.instantiate()
+
+	# endシーンを実体化
+	var end_scene:Node=EndScene.instantiate()
 	
 	# 子ノードに追加
 	add_child(end_scene)
@@ -44,8 +45,8 @@ func main_to_end()->void:
 
 func end_to_main()->void:
 	
-	# startシーンをload
-	var start_scene:Node=start_scene_resource.instantiate()
+	# startシーンを実体化
+	var start_scene:Node=StartScene.instantiate()
 	
 	# 子ノードに追加
 	add_child(start_scene)
