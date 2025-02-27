@@ -3,13 +3,12 @@ extends Node2D
 @export var scene_path:String="res://2_game_scene/maze/scene/end.tscn"
 signal main_to_end
 
-var start_time:int=Time.get_ticks_msec()
-var elapsed_time:int
+var start_time:float=Time.get_ticks_msec()
+var elapsed_time:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label_timer.text="0"
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,16 +25,16 @@ func change_scene()->void:
 	Global.set_time((str(sec)))
 	
 	emit_signal("main_to_end")
-	#call_deferred("change_scene_deferred")
+	call_deferred("change_scene_deferred")
 	
 	
 func change_scene_deferred():
 	
 	# secに変換
-	var sec=elapsed_time/1000.0
+	#var sec=elapsed_time/1000.0
 
 	# クリアタイムを設定
-	Global.set_time(str(sec))
+	#Global.set_time(str(sec))
 
 	# 終了画面に変更
 	get_tree().change_scene_to_file(scene_path)
