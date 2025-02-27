@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scene_path:String="res://2_game_scene/maze/scene/end.tscn"
+const SIGNAL_MAIN_TO_END = "main_to_end"
 signal main_to_end
 
 var start_time:float=Time.get_ticks_msec()
@@ -22,19 +22,6 @@ func change_scene()->void:
 	elapsed_time=Time.get_ticks_msec()-start_time
 	
 	var sec=elapsed_time/1000.0
-	Global.set_time((str(sec)))
+	Global.set_time(str(sec))
 	
-	emit_signal("main_to_end")
-	call_deferred("change_scene_deferred")
-	
-	
-func change_scene_deferred():
-	
-	# secに変換
-	#var sec=elapsed_time/1000.0
-
-	# クリアタイムを設定
-	#Global.set_time(str(sec))
-
-	# 終了画面に変更
-	get_tree().change_scene_to_file(scene_path)
+	emit_signal(SIGNAL_MAIN_TO_END) # 修正箇所: シグナル名を文字列として渡す

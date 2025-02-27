@@ -1,58 +1,59 @@
 extends Node2D
 
-const StartScene:PackedScene=preload("res://2_game_scene/maze/scene/start.tscn")
-const MainScene:PackedScene=preload("res://2_game_scene/maze/scene/main.tscn")
-const EndScene:PackedScene=preload("res://2_game_scene/maze/scene/end.tscn")
+enum SceneName {START, MAIN, END}
+const SIGNAL_CHANGE_TO_MAIN = "change_to_main"
+const SIGNAL_MAIN_TO_END = "main_to_end"
+const SIGNAL_END_TO_START = "end_to_start"
 
-# Called when the node enters the scene tree for the first time.
+const StartScene: PackedScene = preload("res://2_game_scene/maze/scene/start.tscn")
+const MainScene: PackedScene = preload("res://2_game_scene/maze/scene/main.tscn")
+const EndScene: PackedScene = preload("res://2_game_scene/maze/scene/end.tscn")
+
+var current_scene: Node = null
+
 func _ready() -> void:
-	# シグナル
-	$Start.connect("change_to_main",start_to_main)
+	_change_scene(SceneName.START)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func start_to_main()->void:
-	
-	# mainシーンを実体化
-	var main_scene:Node=MainScene.instantiate()
-	
-	# 子ノードに追加
-	add_child(main_scene)
-	
-	# シグナルを接続
-	$Main.connect("main_to_end",main_to_end)
-	
-	# Startノードを開放
-	$Start.queue_free()
 
-func main_to_end()->void:
+func _change_scene(scene_name:SceneName) -> void:
+	if current_scene != null:
+		current_scene.queue_free()
+		current_scene = null
+	
+	match scene_name:
+		SceneName.START:
+			if StartScene == null: # 修正箇所: nullかどうかをチェック
+				printerr("Error: Start scene is not loaded.")
+				return
+			current_scene = StartScene.instantiate()
+			current_scene.connect(SIGNAL_CHANGE_TO_MAIN, _on_start_to_main)
+		SceneName.MAIN:
+			if MainScene == null: # 修正箇所: nullかどうかをチェック
+				printerr("Error: Main scene is not loaded.")
+				return
+			current_scene = MainScene.instantiate()
+			current_scene.connect(SIGNAL_MAIN_TO_END, _on_main_to_end)
+		SceneName.END:
+			if EndScene == null: # 修正箇所: nullかどうかをチェック
+				printerr("Error: End scene is not loaded.")
+				return
+			current_scene = EndScene.instantiate()
+			current_scene.connect(SIGNAL_END_TO_START, _on_end_to_start)
+		_:
+			printerr("Error: Invalid scene name.")
+			return
+	
+	add_child(current_scene)
 
-	# endシーンを実体化
-	var end_scene:Node=EndScene.instantiate()
-	
-	# 子ノードに追加
-	add_child(end_scene)
-	
-	# シグナルを接続
-	$End.connect("end_to_start",end_to_main)
-	
-	# mainノードを開放
-	$Main.queue_free()
 
+func _on_start_to_main() -> void:
+	_change_scene(SceneName.MAIN)
 
-func end_to_main()->void:
-	
-	# startシーンを実体化
-	var start_scene:Node=StartScene.instantiate()
-	
-	# 子ノードに追加
-	add_child(start_scene)
-	
-	# シグナルを接続
-	$Start.connect("change_to_main",start_to_main)
-	
-	# endノードを開放
-	$End.queue_free()
+func _on_main_to_end() -> void:
+	_change_scene(SceneName.END)
+
+func _on_end_to_start() -> void:
+	_change_scene(SceneName.START)

@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwbisubcs3gab"]
+[gd_scene load_steps=2 format=3 uid="uid://dwbisubcs3gab"]
 
 [ext_resource type="Script" path="res://2_game_scene/maze/script/root.gd" id="1_3cvg2"]
-[ext_resource type="PackedScene" uid="uid://be4v37u46ee27" path="res://2_game_scene/maze/scene/start.tscn" id="1_xsbl8"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_3cvg2")
-
-[node name="Start" parent="." instance=ExtResource("1_xsbl8")]
