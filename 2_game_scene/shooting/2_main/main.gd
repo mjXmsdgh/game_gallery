@@ -10,7 +10,11 @@ func update_score() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_score()
-	pass # Replace with function body.
+	connect_enemy_signals()
+
+
+func connect_enemy_signals() -> void:
+	var enemys=get_tree().get_nodes_in_group("enemy")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
