@@ -4,17 +4,31 @@ var time=0
 var score=0
 
 func update_score() -> void:
+
+	# CanvasLayer 内の ScoreLabel のテキストを、現在のスコアに更新する
 	$CanvasLayer/ScoreLabel.text=str(score)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
+	# スコア表示を初期化する
 	update_score()
+
+	# enemy ノードのシグナルを接続する
 	connect_enemy_signals()
 
 
 func connect_enemy_signals() -> void:
+
+	# "enemy" グループに属するすべてのノードを取得する（複数の敵が存在する場合を想定）
 	var enemys=get_tree().get_nodes_in_group("enemy")
+
+	# 取得した各 enemy ノードに対して処理を行う
+	for enemy in enemys:
+
+		# 各 enemy ノードの "enemy_deleted" シグナルを、このスクリプトの "_on_enemy_destroyed" 関数に接続する
+		enemy.connect("enemy_deleted",_on_enemy_destroyed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,12 +45,29 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("key_space"):
 		$player.shoot()
 		
+	# 時間計測：delta を time に加算する（経過時間を記録）
 	time=time+delta
 	
+	# 1 秒経過したか判定
 	if time>=1.0:
+
+		# 1秒ごとにプレイヤーが上方向に移動するようにする
 		$player._on_button_up_pressed()
+
+		# time をリセット
 		time=0
-		
+
+
+func _on_enemy_destroyed()->void:
+
+	# スコア追加
+	add_score(100)
+
+
 func add_score(input_score: int) -> void:
+
+	# 現在のスコアに、引数として渡されたスコアを加算する
 	score=score+input_score
+
+	# スコア表示を更新する
 	update_score()
