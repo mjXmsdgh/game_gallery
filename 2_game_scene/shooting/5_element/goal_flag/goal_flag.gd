@@ -1,5 +1,10 @@
 extends Area2D
 
+signal goal_signal
+
+# 弾のグループ名
+const BULLET_GROUP = "bullet"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +17,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("goal")
+	# 侵入してきたareaが弾グループならsignal発信
+	if area.is_in_group(BULLET_GROUP):
+		emit_signal("goal_signal")
