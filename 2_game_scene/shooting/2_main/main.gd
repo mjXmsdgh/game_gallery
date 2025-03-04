@@ -1,10 +1,11 @@
 extends Node2D
 
+# エンドシーンへ切り替えるための信号
 signal main_to_end
 
 
-var time:float=0.0
-var score:int=0
+var time:float=0.0  # 経過時間
+var score:int=0     # 現在のスコア 
 
 const ENEMY_SCORE:int = 100 # 敵を倒した時のスコア
 const ONE_SECOND:float = 1.0 # 1秒
@@ -20,7 +21,7 @@ func _ready() -> void:
 	connect_enemy_signals()
 	
 	# ゴールのシグナルを接続
-	$Goal_flag.connect("goal_signal",goal_func)
+	$Goal_flag.connect("goal_signal",_on_goal_reached)
 
 
 func update_score() -> void:
@@ -62,13 +63,13 @@ func _process(delta: float) -> void:
 func _handle_player_input() -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		$player._on_button_up_pressed()
-	elif Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_down"):
 		$player._on_button_down_pressed()
-	elif Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("ui_left"):
 		$player._on_button_left_pressed()
-	elif Input.is_action_just_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_right"):
 		$player._on_button_right_pressed()
-	elif Input.is_action_just_pressed("key_space"):
+	if Input.is_action_just_pressed("key_space"):
 		$player.shoot()
 
 func _on_enemy_deleted()->void:
@@ -85,6 +86,6 @@ func add_score(input_score: int) -> void:
 	# スコア表示を更新する
 	update_score()
 
-func goal_func() -> void:
+func _on_goal_reached() -> void:
 	print("get goal")
 	emit_signal("main_to_end")
