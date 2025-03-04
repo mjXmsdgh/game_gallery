@@ -1,6 +1,7 @@
 extends Node2D
 
-signal end_to_start
+signal change_to_main
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
-	emit_signal("end_to_start")
+func _on_button_start_pressed() -> void:
+	emit_signal("change_to_main")
 	pass # Replace with function body.

@@ -8,7 +8,7 @@ script = ExtResource("1_a7ebj")
 [node name="Label" type="Label" parent="."]
 offset_left = 216.0
 offset_top = 154.0
-offset_right = 437.0
+offset_right = 474.0
 offset_bottom = 242.0
 theme_override_font_sizes/font_size = 64
 text = "Score : 0"
@@ -20,3 +20,5 @@ offset_right = 1108.0
 offset_bottom = 572.0
 theme_override_font_sizes/font_size = 64
 text = "Start Screen　→"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,5 +1,8 @@
 extends Node2D
 
+signal main_to_end
+
+
 var time:float=0.0
 var score:int=0
 
@@ -84,3 +87,4 @@ func add_score(input_score: int) -> void:
 
 func goal_func() -> void:
 	print("get goal")
+	emit_signal("main_to_end")

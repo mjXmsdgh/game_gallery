@@ -1,16 +1,22 @@
 extends Node2D
 
+# シーン名を列挙型で定義
 enum SceneName {START, MAIN, END}
+
 const SIGNAL_CHANGE_TO_MAIN = "change_to_main"
 const SIGNAL_MAIN_TO_END = "main_to_end"
 const SIGNAL_END_TO_START = "end_to_start"
 
+# シーンをプリロード
 const StartScene: PackedScene = preload("res://2_game_scene/shooting/1_start/start.tscn")
 const MainScene: PackedScene = preload("res://2_game_scene/shooting/2_main/main.tscn")
-#const EndScene: PackedScene = preload("")
+const EndScene: PackedScene = preload("res://2_game_scene/shooting/3_end/end.tscn")
 
+# 現在のシーンを管理する変数
+var current_scene: Node2D = null
 
 func _ready() -> void:
+	# ゲーム開始時にスタートシーンを読み込む
 	_change_scene(SceneName.START)
 	
 

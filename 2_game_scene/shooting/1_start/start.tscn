@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://l5fmsr3sskjk"]
+[gd_scene load_steps=2 format=3 uid="uid://l5fmsr3sskjk"]
+
+[ext_resource type="Script" path="res://2_game_scene/shooting/1_start/start.gd" id="1_24w2y"]
 
 [node name="Start" type="Node2D"]
+script = ExtResource("1_24w2y")
 
 [node name="Label_SHOOTING" type="Label" parent="."]
 offset_left = 409.0
@@ -17,3 +20,5 @@ offset_right = 702.0
 offset_bottom = 490.0
 theme_override_font_sizes/font_size = 64
 text = "START"
+
+[connection signal="pressed" from="Button_start" to="." method="_on_button_start_pressed"]
