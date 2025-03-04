@@ -10,6 +10,7 @@ var score:int=0     # 現在のスコア
 const ENEMY_SCORE:int = 100 # 敵を倒した時のスコア
 const ONE_SECOND:float = 1.0 # 1秒
 
+var auto_move_timer:Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,14 @@ func _ready() -> void:
 	
 	# ゴールのシグナルを接続
 	$Goal_flag.connect("goal_signal",_on_goal_reached)
+
+	# タイマーを作成
+	auto_move_timer=Timer.new()
+
+	auto_move_timer.wait_time=ONE_SECOND
+	auto_move_timer.autostart=true
+	auto_move_timer.timeout.connect(_on_auto_move_timer_timeout)
+	add_child(auto_move_timer)
 
 
 func update_score() -> void:
@@ -46,18 +55,6 @@ func connect_enemy_signals() -> void:
 func _process(delta: float) -> void:
 
 	_handle_player_input()
-		
-	# 時間計測：delta を time に加算する（経過時間を記録）
-	time=time+delta
-	
-	# 1 秒経過したか判定
-	if time>=ONE_SECOND:
-
-		# 1秒ごとにプレイヤーが上方向に移動するようにする
-		$player._on_button_up_pressed()
-
-		# time をリセット
-		time=0
 
 
 func _handle_player_input() -> void:
@@ -89,3 +86,6 @@ func add_score(input_score: int) -> void:
 func _on_goal_reached() -> void:
 	print("get goal")
 	emit_signal("main_to_end")
+
+func _on_auto_move_timer_timeout() -> void:
+	$player._on_button_up_pressed()
