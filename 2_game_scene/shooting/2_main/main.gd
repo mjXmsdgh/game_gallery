@@ -13,6 +13,7 @@ var score:int=0     # 現在のスコア
 const ENEMY_SCORE:int = 100 # 敵を倒した時のスコア
 const ONE_SECOND:float = 1.0 # 1秒
 
+# タイマー
 var auto_move_timer:Timer
 
 # Called when the node enters the scene tree for the first time.
@@ -30,9 +31,16 @@ func _ready() -> void:
 	# タイマーを作成
 	auto_move_timer=Timer.new()
 
+	# 1秒ごとにタイムアウトする
 	auto_move_timer.wait_time=ONE_SECOND
+
+	# シーン開始時にタイマーを自動で開始する
 	auto_move_timer.autostart=true
+
+	# タイムアウト時に呼び出す関数を設定
 	auto_move_timer.timeout.connect(_on_auto_move_timer_timeout)
+
+	# タイマーをシーンツリーに追加する
 	add_child(auto_move_timer)
 
 
@@ -60,6 +68,7 @@ func _process(delta: float) -> void:
 	_handle_player_input()
 
 
+# プレイヤーの入力を処理する関数
 func _handle_player_input() -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		$player._on_button_up_pressed()
@@ -72,12 +81,15 @@ func _handle_player_input() -> void:
 	if Input.is_action_just_pressed("key_space"):
 		$player.shoot()
 
+
+# 敵が削除された時に呼び出される関数
 func _on_enemy_deleted()->void:
 
 	# スコア追加
 	add_score(ENEMY_SCORE)
 
 
+# スコアを加算する関数
 func add_score(input_score: int) -> void:
 
 	# 現在のスコアに、引数として渡されたスコアを加算する
@@ -86,6 +98,8 @@ func add_score(input_score: int) -> void:
 	# スコア表示を更新する
 	update_score()
 
+
+# ゴールに到達したときに呼び出される関数
 func _on_goal_reached() -> void:
 
 	# shooting_rootに現在のスコアを送信するシグナルを発行
@@ -94,6 +108,8 @@ func _on_goal_reached() -> void:
 	# エンドシーンに切り替えるためのシグナルを発行
 	emit_signal("main_to_end")
 
+
+# タイマーがタイムアウトしたときに呼び出される関数
 func _on_auto_move_timer_timeout() -> void:
 
 	# 時間が来たら上に移動
