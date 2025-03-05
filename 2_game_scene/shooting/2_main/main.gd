@@ -3,6 +3,9 @@ extends Node2D
 # エンドシーンへ切り替えるための信号
 signal main_to_end
 
+# rootへスコアを渡す
+signal send_score_to_root(score_value)
+
 
 var time:float=0.0  # 経過時間
 var score:int=0     # 現在のスコア 
@@ -84,8 +87,14 @@ func add_score(input_score: int) -> void:
 	update_score()
 
 func _on_goal_reached() -> void:
-	print("get goal")
+
+	# shooting_rootに現在のスコアを送信するシグナルを発行
+	emit_signal("send_score_to_root",score)
+
+	# エンドシーンに切り替えるためのシグナルを発行
 	emit_signal("main_to_end")
 
 func _on_auto_move_timer_timeout() -> void:
+
+	# 時間が来たら上に移動
 	$player._on_button_up_pressed()

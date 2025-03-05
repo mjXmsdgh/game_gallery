@@ -12,6 +12,9 @@ const StartScene: PackedScene = preload("res://2_game_scene/shooting/1_start/sta
 const MainScene: PackedScene = preload("res://2_game_scene/shooting/2_main/main.tscn")
 const EndScene: PackedScene = preload("res://2_game_scene/shooting/3_end/end.tscn")
 
+# スコア
+var clear_score:int=0
+
 # 現在のシーンを管理する変数
 var current_scene: Node2D = null
 
@@ -41,11 +44,13 @@ func _change_scene(scene_name:SceneName) -> void:
 				return
 			current_scene = MainScene.instantiate()
 			current_scene.connect(SIGNAL_MAIN_TO_END, _on_main_to_end)
+			current_scene.connect("send_score_to_root",_on_score_recieved)
 		SceneName.END:
 			if EndScene == null: # 修正箇所: nullかどうかをチェック
 				printerr("Error: End scene is not loaded.")
 				return
 			current_scene = EndScene.instantiate()
+			current_scene.init_score(clear_score)
 			current_scene.connect(SIGNAL_END_TO_START, _on_end_to_start)
 		_:
 			printerr("Error: Invalid scene name.")
@@ -53,6 +58,9 @@ func _change_scene(scene_name:SceneName) -> void:
 	
 	add_child(current_scene)
 
+
+func _on_score_recieved(score_value:int)->void:
+	clear_score=score_value
 
 func _on_start_to_main() -> void:
 	_change_scene(SceneName.MAIN)
