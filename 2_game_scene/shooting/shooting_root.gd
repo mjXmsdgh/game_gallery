@@ -21,10 +21,7 @@ var current_scene: Node2D = null
 func _ready() -> void:
 	# ゲーム開始時にスタートシーンを読み込む
 	_change_scene(SceneName.START)
-	
 
-func _process(delta: float) -> void:
-	pass
 
 func _change_scene(scene_name:SceneName) -> void:
 	if current_scene != null:
