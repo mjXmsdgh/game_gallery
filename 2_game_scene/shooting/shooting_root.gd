@@ -59,14 +59,21 @@ func _change_scene(scene_name:SceneName) -> void:
 	add_child(current_scene)
 
 
+# スコアを受け取ったときに呼び出される関数
 func _on_score_recieved(score_value:int)->void:
 	clear_score=score_value
 
+
+# スタートシーンからメインシーンに切り替えるための関数
 func _on_start_to_main() -> void:
 	_change_scene(SceneName.MAIN)
 
+
+# メインシーンからエンドシーンに切り替えるための関数
 func _on_main_to_end() -> void:
 	_change_scene(SceneName.END)
 
+
+# エンドシーンからスタートシーンに切り替えるための関数
 func _on_end_to_start() -> void:
 	_change_scene(SceneName.START)
