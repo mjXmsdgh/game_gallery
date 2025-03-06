@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=4 uid="uid://bfrpkgpjpb67i"]
 
 [ext_resource type="Script" path="res://2_game_scene/shooting/scripts/main.gd" id="1_jcdoq"]
-[ext_resource type="TileSet" uid="uid://b5ig2fdnurrvw" path="res://2_game_scene/shooting/new_tile_set.tres" id="2_1ub1x"]
-[ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://2_game_scene/shooting/5_element/player/shooting_player.tscn" id="3_bp2n3"]
-[ext_resource type="PackedScene" uid="uid://c2sxlvuavtsji" path="res://2_game_scene/shooting/5_element/bullet/bullet.tscn" id="4_0ev2w"]
-[ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://2_game_scene/shooting/5_element/enemy/enemy.tscn" id="5_b25gr"]
-[ext_resource type="PackedScene" uid="uid://c25tfpjx5rkb4" path="res://2_game_scene/shooting/5_element/goal_flag/goal_flag.tscn" id="6_ee2fk"]
+[ext_resource type="TileSet" uid="uid://b5ig2fdnurrvw" path="res://2_game_scene/shooting/resources/new_tile_set.tres" id="2_1ub1x"]
+[ext_resource type="PackedScene" uid="uid://c1anwtx6pv6p1" path="res://2_game_scene/shooting/scenes/shooting_player.tscn" id="3_bp2n3"]
+[ext_resource type="PackedScene" uid="uid://c2sxlvuavtsji" path="res://2_game_scene/shooting/scenes/bullet.tscn" id="4_0ev2w"]
+[ext_resource type="PackedScene" uid="uid://cdhriv4tr086t" path="res://2_game_scene/shooting/scenes/enemy.tscn" id="5_b25gr"]
+[ext_resource type="PackedScene" uid="uid://c25tfpjx5rkb4" path="res://2_game_scene/shooting/scenes/goal_flag.tscn" id="6_ee2fk"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jcdoq")

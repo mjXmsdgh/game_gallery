@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://r2tfdifeilqw"]
-
-[ext_resource type="Script" path="res://2_game_scene/shooting/shooting_root.gd" id="1_f5sqp"]
-
-[node name="shooting_root" type="Node2D"]
-script = ExtResource("1_f5sqp")
