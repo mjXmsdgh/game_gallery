@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://1_main/button_shooting.gd" id="1_b0kw8"]
 [ext_resource type="Script" path="res://1_main/button_to_maze.gd" id="2_03fhe"]
-[ext_resource type="PackedScene" uid="uid://l5fmsr3sskjk" path="res://2_game_scene/shooting/scenes/start.tscn" id="2_q1tgt"]
+[ext_resource type="PackedScene" uid="uid://l5fmsr3sskjk" path="res://2_game_scene/shooting/scenes/1_start.tscn" id="2_q1tgt"]
 [ext_resource type="PackedScene" path="res://2_game_scene/maze/1_start/start.tscn" id="3_ixnww"]
 
 [node name="main" type="Node2D"]
