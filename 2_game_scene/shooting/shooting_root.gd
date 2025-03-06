@@ -8,9 +8,9 @@ const SIGNAL_MAIN_TO_END = "main_to_end"
 const SIGNAL_END_TO_START = "end_to_start"
 
 # シーンをプリロード
-const StartScene: PackedScene = preload("res://2_game_scene/shooting/1_start/start.tscn")
-const MainScene: PackedScene = preload("res://2_game_scene/shooting/2_main/main.tscn")
-const EndScene: PackedScene = preload("res://2_game_scene/shooting/3_end/end.tscn")
+const StartScene: PackedScene = preload("res://2_game_scene/shooting/scenes/start.tscn")
+const MainScene: PackedScene = preload("res://2_game_scene/shooting/scenes/main.tscn")
+const EndScene: PackedScene = preload("res://2_game_scene/shooting/scenes/end.tscn")
 
 # スコア
 var clear_score:int=0

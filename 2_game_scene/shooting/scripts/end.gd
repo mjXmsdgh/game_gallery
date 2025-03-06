@@ -8,7 +8,8 @@ var clear_score:int=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label.text=str(clear_score)
+	#$Label.text=str(clear_score)
+	init_score(clear_score)
 
 
 func _on_button_pressed() -> void:
@@ -23,4 +24,4 @@ func init_score(input_score:int)->void:
 	clear_score=input_score
 
 	# Labelに設定
-	$Label.text=str(clear_score)
+	$Label.text="Score : "+str(clear_score)
