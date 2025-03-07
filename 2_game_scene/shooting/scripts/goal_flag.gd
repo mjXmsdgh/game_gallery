@@ -19,4 +19,11 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	# 侵入してきたareaが弾グループならsignal発信
 	if area.is_in_group(BULLET_GROUP):
-		emit_signal("goal_signal")
+
+		# 音を鳴らす
+		$goal_sound.play()
+
+func _on_goal_sound_finished() -> void:
+
+	# 音がなり終わったらシグナル発信
+	emit_signal("goal_signal")
