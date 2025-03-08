@@ -31,7 +31,9 @@ func move(velocity: Vector2) -> void:
 
 
 func shoot() -> void:
-
+	
+	$AudioStreamPlayer2D.play()
+	
 	var bullet_instance=BulletScene.instantiate()
 	
 	if bullet_instance==null:
@@ -41,6 +43,7 @@ func shoot() -> void:
 	# 位置を設定
 	bullet_instance.position=position
 	bullet_instance.position.y=bullet_instance.position.y-TILE_SIZE
+	
 	
 	# 追加
 	get_parent().add_child(bullet_instance)
