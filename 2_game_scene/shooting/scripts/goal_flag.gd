@@ -3,7 +3,7 @@ extends Area2D
 signal goal_signal
 
 # 弾のグループ名
-const BULLET_GROUP = "bullet"
+const BULLET_GROUP:String = "bullet"
 
 
 # Called when the node enters the scene tree for the first time.

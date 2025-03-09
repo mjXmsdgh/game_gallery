@@ -3,20 +3,20 @@ extends CharacterBody2D
 
 @export var BulletScene: PackedScene
 
-const TILE_SIZE=32
+const TILE_SIZE:int=32
 
 
 func move(velocity: Vector2) -> void:
 	
 	# 移動しない
-	if (velocity.x==0)and(velocity.y==0):
+	if velocity.is_zero_approx():
 		return
 	
 	# 移動量
-	var move_value=velocity*TILE_SIZE
+	var move_value:Vector2=velocity*TILE_SIZE
 	
 	# 新しい位置
-	var new_position=position+move_value
+	var new_position:Vector2=position+move_value
 	
 	# 移動できるかチェック
 	if test_move(global_transform,move_value):
@@ -34,7 +34,7 @@ func shoot() -> void:
 	
 	$AudioStreamPlayer2D.play()
 	
-	var bullet_instance=BulletScene.instantiate()
+	var bullet_instance:Node2D=BulletScene.instantiate()
 	
 	if bullet_instance==null:
 		print("error")
@@ -48,7 +48,6 @@ func shoot() -> void:
 	# 追加
 	get_parent().add_child(bullet_instance)
 	
-
 
 func _on_button_up_pressed() -> void:
 	var velocity=Vector2(0,-1)
