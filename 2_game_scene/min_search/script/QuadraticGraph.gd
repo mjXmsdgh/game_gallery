@@ -11,10 +11,6 @@ var y_min: float = -10.0  # y軸の最小値（下端）: グラフが描画さ�
 var y_max: float = 10.0   # y軸の最大値（上端）: グラフが描画されるy軸の最大値
 var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グラフ上の1単位が画面上の何ピクセルに相当するか
 
-# 二次関数の係数 (y = ax^2 + bx + c)
-var a: float = 1.0  # 二次項の係数 (x^2の係数): 二次関数のx^2項の係数
-var b: float = 0.0  # 一次項の係数 (xの係数): 二次関数のx項の係数
-var c: float = 0.0  # 定数項: 二次関数の定数項
 
 #  Axisノードのリファレンス
 # このノードの親ノードであるAxisノードへの参照を保持する変数
@@ -29,21 +25,29 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 	Returns:
 		Vector2: 変換されたスクリーン座標
 	"""
-	# axis_node が有効なときのみ実行
-	if axis_node != null:
-		var center: Vector2 = axis_node.get_screen_center() # Axisノードから画面の中心座標を取得
-		var screen_size = axis_node.get_screen_size() # Axisノードから画面のサイズを取得
-		var world_width = x_max - x_min # ワールド座標の幅
-		var world_height = y_max - y_min # ワールド座標の高さ
-		var screen_width = screen_size.x # スクリーン座標の幅
-		var screen_height = screen_size.y # スクリーン座標の高さ
 
-		# ワールド座標をスクリーン座標に変換する計算
-		var screen_x = center.x + (world_pos.x-((x_max+x_min)/2)) * screen_width / world_width; # x座標の変換
-		var screen_y = center.y - (world_pos.y-((y_max+y_min)/2)) * screen_height / world_height; # y座標の変換
-		return Vector2(screen_x,screen_y) # スクリーン座標を返す
-	else:
-		return Vector2.ZERO # axis_nodeがnullの場合は原点を返す
+	# axis_node が無効なときは終わり
+	if axis_node==null:
+		print_debug("Error: 親ノード AxisNode が見つかりません。")
+		return Vector2.ZERO
+
+	# AxisNodeから情報を取得
+	var center: Vector2 = axis_node.get_screen_center()
+	var screen_size: Vector2 = axis_node.get_screen_size()
+
+	# ワールド座標系のサイズ
+	var world_width: float = x_max - x_min
+	var world_height: float = y_max - y_min
+
+	# スクリーン座標系のサイズ
+	var screen_width: float = screen_size.x
+	var screen_height: float = screen_size.y
+
+	# ワールド座標をスクリーン座標に変換する計算
+	var screen_x: float = center.x + (world_pos.x-((x_max+x_min)/2)) * screen_width / world_width;
+	var screen_y: float = center.y - (world_pos.y-((y_max+y_min)/2)) * screen_height / world_height;
+
+	return Vector2(screen_x,screen_y) # スクリーン座標を返す
 
 # 二次関数の計算
 func quadratic_function(x: float) -> float:
@@ -54,6 +58,12 @@ func quadratic_function(x: float) -> float:
 	Returns:
 		float: xに対応するyの値
 	"""
+
+	# 二次関数の係数 (y = ax^2 + bx + c)
+	var a: float = 1.0  # 二次項の係数 (x^2の係数): 二次関数のx^2項の係数
+	var b: float = 0.0  # 一次項の係数 (xの係数): 二次関数のx項の係数
+	var c: float = 0.0  # 定数項: 二次関数の定数項
+
 	return a * pow(x, 2) + b * x + c  # 二次関数の計算結果を返す
 
 # 二次関数の描画
@@ -69,8 +79,9 @@ func draw_quadratic_function():
 		var current_point: Vector2 = Vector2(current_x, current_y)  # 現在の点（ワールド座標）を生成
 		
 		# 直前の点と現在の点をスクリーン座標に変換
-		var screen_previous_point = world_to_screen(previous_point)
-		var screen_current_point = world_to_screen(current_point)
+		var screen_previous_point: Vector2 = world_to_screen(previous_point)
+		var screen_current_point: Vector2 = world_to_screen(current_point)
+
 		# 直前の点から現在の点まで緑色の線を描画
 		draw_line(screen_previous_point, screen_current_point, Color.GREEN)
 
@@ -81,7 +92,6 @@ func _ready():
 	シーンが準備完了したときに一度だけ呼ばれる関数。
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
-	print(axis_node)  # axis_nodeの内容をコンソールに出力する（デバッグ用）
 	queue_redraw()  # _draw() メソッドの呼び出しを要求（次のフレームで実行される）
 
 # 描画処理
