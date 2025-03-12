@@ -22,12 +22,12 @@ func draw_axis():
 	# x軸
 	var x_axis_start: Vector2 = Vector2(0, center.y)
 	var x_axis_end: Vector2 = Vector2(screen_size.x, center.y)
-	draw_line(x_axis_start, x_axis_end, Color.WHITE)
+	draw_line(x_axis_start, x_axis_end, Color.DIM_GRAY,5.0)
 
 	# y軸
 	var y_axis_start: Vector2 = Vector2(center.x, 0)
 	var y_axis_end: Vector2 = Vector2(center.x, screen_size.y)
-	draw_line(y_axis_start, y_axis_end, Color.WHITE)
+	draw_line(y_axis_start, y_axis_end, Color.DIM_GRAY,5.0)
 
 func _ready():
 	queue_redraw()

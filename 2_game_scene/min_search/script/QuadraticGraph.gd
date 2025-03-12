@@ -49,7 +49,7 @@ func draw_quadratic_function():
 		var screen_current_point: Vector2 = wtos_node.world_to_screen(current_point)
 
 		# 直前の点から現在の点まで緑色の線を描画
-		draw_line(screen_previous_point, screen_current_point, Color.GREEN)
+		draw_line(screen_previous_point, screen_current_point, Color.WHITE,3.0)
 
 		previous_point = current_point  # 現在の点を次のループの直前の点として保存
 

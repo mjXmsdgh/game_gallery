@@ -123,7 +123,7 @@ func draw_axis():
 	var x_axis_end: Vector2 = Vector2(screen_size.x, center.y) 
 
 	# x軸を白色で描画
-	draw_line(x_axis_start, x_axis_end, Color.WHITE) 
+	draw_line(x_axis_start, x_axis_end, Color.WHITE,5.0) 
 
 	# -----y軸の描画-----
 
@@ -131,7 +131,7 @@ func draw_axis():
 	var y_axis_start:Vector2=Vector2(center.x,0) 
 
 	# y軸の終点（画面中心のx座標、下端）
-	var y_axis_end:Vector2=Vector2(center.x,screen_size.y) 
+	var y_axis_end:Vector2=Vector2(center.x,screen_size.y,5.0) 
 
 	# y軸を白色で描画
 	draw_line(y_axis_start,y_axis_end,Color.WHITE) 
