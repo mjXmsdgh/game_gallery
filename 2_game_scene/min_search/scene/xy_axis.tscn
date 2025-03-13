@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1v0oxliodfs7"]
+[gd_scene load_steps=6 format=3 uid="uid://1v0oxliodfs7"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_1sb82"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="2_ku3po"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/point_node.gd" id="3_ddsdi"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/QuadraticGraph.gd" id="3_y7110"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/point_manager.gd" id="4_wcucf"]
 
 [node name="XyAxis" type="Node2D"]
 
@@ -16,5 +17,8 @@ script = ExtResource("2_ku3po")
 [node name="QuadraticGraphNode" type="Node2D" parent="AxisNode"]
 script = ExtResource("3_y7110")
 
-[node name="PointNode" type="Node2D" parent="AxisNode"]
+[node name="PointManager" type="Node2D" parent="AxisNode"]
+script = ExtResource("4_wcucf")
+
+[node name="PointNode" type="Node2D" parent="AxisNode/PointManager"]
 script = ExtResource("3_ddsdi")
