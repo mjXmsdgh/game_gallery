@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_1sb82"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="2_ku3po"]
-[ext_resource type="Script" path="res://2_game_scene/min_search/script/point_node.gd" id="3_ddsdi"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/PointNode.gd" id="3_ddsdi"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/QuadraticGraph.gd" id="3_y7110"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/point_manager.gd" id="4_wcucf"]
 

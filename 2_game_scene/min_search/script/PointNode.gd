@@ -2,15 +2,15 @@ extends Node2D
 
 # Axisノードへの参照
 @onready var wtos_node=get_parent().get_parent().get_node_or_null("world_to_screen")
-@onready var point_manager=get_parent()
+#@onready var point_manager=get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	queue_redraw()
 
-	point_manager.add_point({"pos":Vector2(1,2),"color":Color.RED})
-	point_manager.add_point({"pos":Vector2(-2,4),"color":Color.BLUE})
-	point_manager.add_point({"pos":Vector2(0,0),"color":Color.GREEN})
+	#point_manager.add_point({"pos":Vector2(1,2),"color":Color.RED})
+	#point_manager.add_point({"pos":Vector2(-2,4),"color":Color.BLUE})
+	#point_manager.add_point({"pos":Vector2(0,0),"color":Color.GREEN})
 
 
 func draw_one_point(point_data: Dictionary):
@@ -37,7 +37,7 @@ func draw_one_point(point_data: Dictionary):
 
 func _draw() -> void:
 
-	for point_data in point_manager.points:
+	for point_data in get_parent().points:
 		draw_one_point(point_data)
 
 

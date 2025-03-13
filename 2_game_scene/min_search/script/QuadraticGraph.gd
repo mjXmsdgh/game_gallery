@@ -13,7 +13,7 @@ var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グ�
 
 
 @onready var wtos_node=get_parent().get_node_or_null("world_to_screen")
-
+@onready var point_manager=get_parent().get_node_or_null("PointManager") # PointManager を取得
 
 # 二次関数の計算
 func quadratic_function(x: float) -> float:
@@ -59,6 +59,11 @@ func _ready():
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
 	queue_redraw()  # _draw() メソッドの呼び出しを要求（次のフレームで実行される）
+
+	point_manager.add_point({"pos": Vector2(-3, quadratic_function(-3)), "color": Color.RED})
+	point_manager.add_point({"pos": Vector2(0, quadratic_function(0)), "color": Color.BLUE})
+	point_manager.add_point({"pos": Vector2(3, quadratic_function(3)), "color": Color.GREEN})
+
 
 # 描画処理
 func _draw():
