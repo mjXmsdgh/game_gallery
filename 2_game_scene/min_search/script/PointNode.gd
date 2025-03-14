@@ -1,8 +1,8 @@
 extends Node2D
 
 # Axisノードへの参照
-@onready var wtos_node=get_parent().get_parent().get_node_or_null("world_to_screen")
-#@onready var point_manager=get_parent()
+@onready var wtos_node=get_node_or_null("../../world_to_screen")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
