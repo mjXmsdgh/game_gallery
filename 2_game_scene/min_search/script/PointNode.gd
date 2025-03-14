@@ -8,18 +8,13 @@ extends Node2D
 func _ready() -> void:
 	queue_redraw()
 
-	#point_manager.add_point({"pos":Vector2(1,2),"color":Color.RED})
-	#point_manager.add_point({"pos":Vector2(-2,4),"color":Color.BLUE})
-	#point_manager.add_point({"pos":Vector2(0,0),"color":Color.GREEN})
-
 
 func draw_one_point(point_data: Dictionary):
 	"""
 	点を描画する関数
 	"""
-	#var point: Vector2=Vector2(1,2)
-	var point: Vector2=Vector2(point_data.pos)
-	var screen_point=wtos_node.world_to_screen(point)
+	var point: Vector2=point_data.pos
+	var screen_point: Vector2=wtos_node.world_to_screen(point)
 	var point_color: Color=point_data.color
 
 	# x軸への垂線
