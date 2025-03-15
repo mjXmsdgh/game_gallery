@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1v0oxliodfs7"]
+[gd_scene load_steps=7 format=3 uid="uid://1v0oxliodfs7"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_1sb82"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="2_ku3po"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/PointNode.gd" id="3_ddsdi"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/QuadraticGraph.gd" id="3_y7110"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/point_manager.gd" id="4_wcucf"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/CalculationNode.gd" id="6_wn7fd"]
 
 [node name="XyAxis" type="Node2D"]
 
@@ -22,3 +23,6 @@ script = ExtResource("4_wcucf")
 
 [node name="PointNode" type="Node2D" parent="AxisNode/PointManager"]
 script = ExtResource("3_ddsdi")
+
+[node name="CalculationNode" type="Node2D" parent="."]
+script = ExtResource("6_wn7fd")
