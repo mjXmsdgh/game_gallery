@@ -20,10 +20,10 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 	var screen_size = axis_node.get_screen_size()
 	
 	# ここでAxisNodeのx_min,x_max等を取得する必要がある。ただしそれはAxisNodeの責務
-	var x_min = -10.0
-	var x_max = 10.0
-	var y_min = -10.0
-	var y_max = 10.0
+	var x_min = axis_node.get_x_min()
+	var x_max = axis_node.get_x_max()
+	var y_min = axis_node.get_y_min()
+	var y_max = axis_node.get_y_max()
 	var world_width = x_max - x_min
 	var world_height = y_max - y_min
 	var screen_width = screen_size.x

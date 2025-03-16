@@ -1,5 +1,24 @@
 extends Node2D
 
+
+var x_min: float = -10.0
+var x_max: float = 10.0
+var y_min: float = -10.0
+var y_max: float = 10.0
+
+# 各プロパティのアクセサ
+func get_x_min() -> float:
+	return x_min
+
+func get_x_max() -> float:
+	return x_max
+
+func get_y_min() -> float:
+	return y_min
+
+func get_y_max() -> float:
+	return y_max
+
 # 軸の描画を担当するノード
 
 # 画面の幅と高さを取得
