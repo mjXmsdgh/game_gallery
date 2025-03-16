@@ -1,8 +1,30 @@
 extends Node2D
 
-@onready var root_node = $XyAxis
+# CalculationNodeへの参照
+var calculation_node: Node2D
+# PointManagerへの参照
+var point_manager_node: Node2D
 
-func _input(event):
-	if event.is_action_pressed("key_space"):
-		root_node.get_node("CalculationNode").step_forward()
-		#root_node.get_node("AxisNode").get_node("PointManager").clear_point()
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	calculation_node = get_node_or_null("XyAxis/CalculationNode")
+	point_manager_node = get_node_or_null("XyAxis/AxisNode/PointManager")
+	if point_manager_node != null:
+		print("PointManager Found")
+	if calculation_node != null:
+		print("CalculationNode Found")
+
+func _input(event: InputEvent) -> void:
+	"""
+	キー入力を処理する関数。
+	スペースキーが押されたら、step_forward()を呼び出す。
+	"""
+	if event is InputEventKey:  # eventがInputEventKeyのときのみ処理する
+		if event.is_pressed() and event.keycode == KEY_SPACE: #スペースキーが押されているか確認
+			print("Space key pressed in Main")
+			if calculation_node:
+				calculation_node.step_forward()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

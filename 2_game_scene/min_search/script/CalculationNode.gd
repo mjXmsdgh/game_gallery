@@ -13,7 +13,10 @@ var current_point: Vector2 = Vector2(2, quadratic_function(2))
 var next_point: Vector2 = Vector2()
 
 #学習率
-var learning_rate: float = 0.01
+var learning_rate: float = 0.1
+
+# point_managerノードへの参照
+var point_manager_node
 
 # 勾配
 func gradient(x :float)->float:
@@ -25,18 +28,23 @@ func quadratic_function(x: float) -> float:
 
 # 次のステップに進む
 func step_forward() -> void:
-	print("Calculation step_forward")
 	var x = current_point.x
 	var g = gradient(x)
 	var next_x = x - learning_rate * g
 	next_point = Vector2(next_x, quadratic_function(next_x))
 	current_point = next_point
+	print("Calculation step_forward",next_point)
 
+	if point_manager_node != null:
+		point_manager_node.add_point({"color": Color.GREEN}, next_point)
+	else:
+		print("point_manager_node is null")
 	# 計算の終了条件などをここに追加できます（例: 勾配がほぼゼロになったら終了など）
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	point_manager_node = get_node_or_null("../AxisNode/PointManager")
 	pass # Replace with function body.
 
 

@@ -27,6 +27,7 @@ func add_point(point_data: Dictionary, point: Vector2) -> void:
 	# 親ノード（PointNode）に再描画を通知する。
 	get_node("PointNode").queue_redraw()
 
+
 # 点を削除する
 func remove_point(index: int) -> void:
 	"""
@@ -61,10 +62,10 @@ func _ready() -> void:
 	"""
 	ノードの初期化処理。
 	"""
-	
-	# テスト用の点を追加する(赤と青の点を座標(0,0)に配置)。
-	add_point({"color": Color.RED}, Vector2(0, 0))
+	#初期の点を追加
+	add_point({"color": Color.RED}, Vector2(2, 4))
 	add_point({"color": Color.BLUE}, Vector2(0, 0))
+
 
 # 毎フレーム呼び出される
 func _process(delta: float) -> void:
