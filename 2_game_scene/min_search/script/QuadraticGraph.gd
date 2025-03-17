@@ -67,4 +67,3 @@ func _draw():
 
 	if calculation_node!=null:
 		point_manager.add_point({"color": Color.RED}, calculation_node.current_point)
-		point_manager.add_point({"color": Color.BLUE}, calculation_node.next_point)
