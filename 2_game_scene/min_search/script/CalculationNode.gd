@@ -50,8 +50,3 @@ func step_forward() -> Vector2:
 func _ready() -> void:
 	point_manager_node = get_node_or_null("../AxisNode/PointManager")
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
