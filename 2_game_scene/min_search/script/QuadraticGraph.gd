@@ -66,4 +66,5 @@ func _draw():
 	draw_quadratic_function()  # 二次関数を描画
 
 	if calculation_node!=null:
-		point_manager.add_point({"color": Color.RED}, calculation_node.current_point)
+		var test=Vector2(calculation_node.current_x,calculation_node.current_y)
+		point_manager.add_point({"color": Color.RED}, test)
