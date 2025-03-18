@@ -1,18 +1,25 @@
 extends Node2D
 
 # CalculationNodeへの参照
-var calculation_node: Node2D
+var calculation_node: Node2D=null
 # PointManagerへの参照
-var point_manager_node: Node2D
+var point_manager_node: Node2D=null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	calculation_node = get_node_or_null("XyAxis/CalculationNode")
 	point_manager_node = get_node_or_null("XyAxis/AxisNode/PointManager")
-	if point_manager_node != null:
-		print("PointManager Found")
-	if calculation_node != null:
-		print("CalculationNode Found")
+	#if point_manager_node != null:
+	#	print("PointManager Found")
+	#if calculation_node != null:
+	#	print("CalculationNode Found")
+
+	if calculation_node==null or point_manager_node==null:
+		push_error("Error: CalculationNode or PointManager not found.")
+		return
+
+
+
 
 func _input(event: InputEvent) -> void:
 	"""
