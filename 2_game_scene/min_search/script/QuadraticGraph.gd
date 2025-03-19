@@ -22,9 +22,6 @@ func draw_quadratic_function():
 	"""
 	二次関数のグラフを描画する関数。
 	"""
-	if calculation_node == null:
-		printerr("calculation_node is null")
-		return
 
 	var previous_point: Vector2 = Vector2(x_min, calculation_node.quadratic_function(x_min))  # 最初の点を設定 (x_minにおけるyの値)
 
@@ -48,6 +45,13 @@ func _ready():
 	シーンが準備完了したときに一度だけ呼ばれる関数。
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
+	if wtos_node == null:
+		printerr("wtos_node is null")
+		return
+
+	if calculation_node == null:
+		printerr("calculation_node is null")
+		return
 	queue_redraw()  # _draw() メソッドの呼び出しを要求（次のフレームで実行される）
 
 
@@ -65,6 +69,5 @@ func _draw():
 	point_manager.clear_point()
 	draw_quadratic_function()  # 二次関数を描画
 
-	if calculation_node!=null:
-		var test=Vector2(calculation_node.current_x,calculation_node.current_y)
-		point_manager.add_point({"color": Color.RED}, test)
+	var test=Vector2(calculation_node.current_x,calculation_node.current_y)
+	point_manager.add_point({"color": Color.RED}, test)
