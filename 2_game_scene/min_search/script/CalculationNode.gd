@@ -32,10 +32,8 @@ func step_forward() -> Vector2:
 	var next_y: float = quadratic_function_node.calculate(next_x)  # 次のx座標におけるy座標を計算
 	var next_point: Vector2 = Vector2(next_x, next_y)  # 次の点をVector2として作成
 
-	if point_manager_node != null:  # point_manager_nodeが存在する場合
-		point_manager_node.add_point({"color": Color.GREEN}, next_point)  # 点をpoint_manager_nodeに追加
-	else:  # point_manager_nodeが存在しない場合
-		push_error("point_manager_node is null")  # エラーメッセージをコンソールに出力
+	point_manager_node.add_point({"color": Color.GREEN}, next_point)  # 点をpoint_manager_nodeに追加
+
 	current_x = next_x  # 現在のx座標を更新
 	current_y = next_y  # 現在のy座標を更新
 
@@ -52,7 +50,12 @@ func _ready() -> void:
 	ノードがシーンツリーに追加されたときに一度だけ呼ばれる関数。
 	"""
 	point_manager_node = get_node_or_null("../AxisNode/PointManager")  # PointManagerノードを取得
+
+	if point_manager_node == null:
+		push_error("point_manager_node is null")
+
 	quadratic_function_node = get_node_or_null("QuadraticFunctionNode")
 	if quadratic_function_node == null:
 		push_error("QuadraticFunctionNode is null")
+
 	current_y = quadratic_function_node.calculate(starting_x)
