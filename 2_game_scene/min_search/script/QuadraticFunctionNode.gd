@@ -7,6 +7,31 @@ var a: float = 1.0  # 二次項の係数 (デフォルト値: 1.0)
 var b: float = 0.0  # 一次項の係数 (デフォルト値: 0.0)
 var c: float = 0.0  # 定数項 (デフォルト値: 0.0)
 
+# 係数のランダム範囲
+var a_min: float = 0.1
+var a_max: float = 5.0
+var b_min: float = -10.0
+var b_max: float = 10.0
+var c_min: float = -10.0
+var c_max: float = 10.0
+
+func _ready():
+	randomize() # 乱数シードを初期化
+	set_random_coefficients()
+
+# ランダムな係数を設定する関数
+func set_random_coefficients():
+	# a は 0 にならないようにする
+	while true:
+		a = randf_range(a_min, a_max)
+		if abs(a) > 0.01: # 0に近い値も除外
+			break
+		if a>0:
+			break
+	b = randf_range(b_min, b_max)
+	c = randf_range(c_min, c_max)
+	print("a:",a,"b:",b,"c:",c)
+
 # 二次関数の計算
 func calculate(x: float) -> float:
 	"""
