@@ -21,13 +21,8 @@ func _ready():
 
 # ランダムな係数を設定する関数
 func set_random_coefficients():
-	# a は 0 にならないようにする
-	while true:
-		a = randf_range(a_min, a_max)
-		if abs(a) > 0.01: # 0に近い値も除外
-			break
-		if a>0:
-			break
+
+	a= randf_range(a_min,a_max)
 	b = randf_range(b_min, b_max)
 	c = randf_range(c_min, c_max)
 	print("a:",a,"b:",b,"c:",c)

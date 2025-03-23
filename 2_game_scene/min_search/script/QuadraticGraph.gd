@@ -15,7 +15,6 @@ var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グ�
 @onready var wtos_node=get_parent().get_node_or_null("world_to_screen")
 @onready var point_manager=get_parent().get_node_or_null("PointManager") # PointManager を取得
 @onready var calculation_node=get_parent().get_parent().get_node_or_null("CalculationNode")
-# QuadraticFunctionNodeを取得するパスを修正
 @onready var quadratic_function_node = get_parent().get_parent().get_node_or_null("CalculationNode/QuadraticFunctionNode")
 
 

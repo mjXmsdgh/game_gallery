@@ -4,10 +4,7 @@ extends Node2D
 
 # world_to_screen ノードへの参照
 @onready var wtos_node = get_node_or_null("../../world_to_screen")
-# @onready は、ノードがシーンツリーに追加された後、_ready() が呼ばれる前に初期化される変数です。
 # wtos_node は、ワールド座標をスクリーン座標に変換する処理を行う world_to_screen ノードへの参照を保持します。
-# get_node_or_null は、指定されたパスのノードを取得し、見つからない場合は null を返します。
-# "../../world_to_screen" は、このノードから見て2階層上のworld_to_screenノードを指定しています。
 
 # ノードがシーンツリーに追加されたときに一度だけ呼ばれる関数
 func _ready() -> void:
