@@ -15,23 +15,20 @@ var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グ�
 @onready var wtos_node=get_parent().get_node_or_null("world_to_screen")
 @onready var point_manager=get_parent().get_node_or_null("PointManager") # PointManager を取得
 @onready var calculation_node=get_parent().get_parent().get_node_or_null("CalculationNode")
-@onready var quadratic_function_node = get_parent().get_parent().get_node_or_null("CalculationNode/QuadraticFunctionNode")
-
+#@onready var quadratic_function_node = get_parent().get_parent().get_node_or_null("CalculationNode/QuadraticFunctionNode")
+@onready var poly_func_node=get_parent().get_parent().get_node_or_null("CalculationNode/PolyFunctionNode")
 
 # 二次関数の描画
 func draw_quadratic_function():
 	"""
 	二次関数のグラフを描画する関数。
 	"""
-	if quadratic_function_node == null:
-		push_error("quadratic_function_node is null")
-		return
-	var previous_point: Vector2 = Vector2(x_min, quadratic_function_node.calculate(x_min))  # 最初の点を設定 (x_minにおけるyの値)
+	var previous_point: Vector2 = Vector2(x_min, poly_func_node.calculate(x_min))  # 最初の点を設定 (x_minにおけるyの値)
 
 	# x_minからx_maxまでxを細かく刻んでループ
 	for x in range(int(x_min * 10), int(x_max * 10)): #xを細かく刻む
 		var current_x: float = float(x) / 10.0  # 現在のx座標を計算（0.1刻みで）
-		var current_y: float = quadratic_function_node.calculate(current_x)  # 現在のx座標に対応するy座標を計算
+		var current_y: float = poly_func_node.calculate(current_x)  # 現在のx座標に対応するy座標を計算
 		var current_point: Vector2 = Vector2(current_x, current_y)  # 現在の点（ワールド座標）を生成
 		
 		# 直前の点と現在の点をスクリーン座標に変換
