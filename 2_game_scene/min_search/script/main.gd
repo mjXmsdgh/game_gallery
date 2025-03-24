@@ -23,7 +23,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:  # eventがInputEventKeyのときのみ処理する
 		if event.is_pressed() and event.keycode == KEY_SPACE: #スペースキーが押されているか確認
 			if calculation_node:
-				calculation_node.step_forward()
+				var value=calculation_node.step_forward()
+				print(value)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

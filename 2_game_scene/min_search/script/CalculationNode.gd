@@ -3,7 +3,7 @@ extends Node2D
 # 最急降下法の計算を担当するノード
 
 # 計算開始地点
-var starting_x: float = 2.0  # 計算開始時のx座標 (デフォルト値: 2.0)
+var starting_x: float = 0.5  # 計算開始時のx座標 (デフォルト値: 2.0)
 var current_x: float = starting_x  # 現在のx座標
 var current_y: float = 0.0  # 現在のy座標 (初期値は開始地点のy座標)
 

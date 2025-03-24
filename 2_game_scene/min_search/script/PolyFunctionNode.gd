@@ -2,9 +2,9 @@ extends Node2D
 
 
 var a: float=1.0
-var b: float=2.0
-var c: float=3.9
-var d: float=4.0
+var b: float=3.0
+var c: float=2.0
+var d: float=0.0
 
 
 # Called when the node enters the scene tree for the first time.
