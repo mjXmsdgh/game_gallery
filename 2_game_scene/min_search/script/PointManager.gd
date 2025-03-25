@@ -10,7 +10,7 @@ class PointData:
 # PointDataを要素とするTypedArrayを定義
 var points: Array[PointData] = []
 
-var point_node: Node2D = null
+var PointNode: Node2D = null
 
 #定数化
 const INITIAL_POINTS: Array[Dictionary] = [
@@ -41,8 +41,7 @@ func add_point(point_data: Dictionary, point: Vector2) -> void:
 	points.append(typed_point_data)
 
 	# 親ノード（PointNode）に再描画を通知する。
-	if point_node != null:
-		point_node.queue_redraw()
+	PointNode.queue_redraw()
 
 
 # 点を削除する
@@ -60,8 +59,7 @@ func remove_point(index: int) -> void:
 		points.remove_at(index)
 
 		# 親ノード（PointNode）に再描画を通知する。
-		if point_node != null:
-			point_node.queue_redraw()
+		PointNode.queue_redraw()
 
 # 全ての点を削除する
 func clear_point() -> void:
@@ -72,8 +70,7 @@ func clear_point() -> void:
 	points.clear()
 
 	# 親ノード（PointNode）に再描画を通知する。
-	if point_node != null:
-		point_node.queue_redraw()
+	PointNode.queue_redraw()
 
 # ノードがシーンツリーに追加されたときに呼び出される
 func _ready() -> void:
@@ -81,10 +78,9 @@ func _ready() -> void:
 	ノードの初期化処理。
 	"""
 	#PointNodeの参照を取得
-	if point_node == null:
-		point_node = get_node_or_null("PointNode")
+	PointNode = get_node_or_null("PointNode")
 
-	if point_node == null:
+	if PointNode == null:
 		push_error("Error: PointNode not found.")
 		return
 
