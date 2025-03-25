@@ -23,25 +23,35 @@ func draw_function():
 	var previous_point: Vector2 = Vector2(x_min, poly_func_node.calculate(x_min))
 
 	# x_minからx_maxまでxを細かく刻んでループ
-	for x in range(int(x_min * 10), int(x_max * 10)): 
-		
+	for x in range(int(x_min * 10), int(x_max * 10)):
 		# 現在のx座標を計算（0.1刻みで）
-		var current_x: float = float(x) / 10.0  
-		
+		var current_x: float = float(x) / 10.0
+
 		# 現在のx座標に対応するy座標を計算
-		var current_y: float = poly_func_node.calculate(current_x)  
-		
+		var current_y: float = poly_func_node.calculate(current_x)
+
 		# 現在の点（ワールド座標）を生成
-		var current_point: Vector2 = Vector2(current_x, current_y)  
-		
+		var current_point: Vector2 = Vector2(current_x, current_y)
+
 		# 直前の点と現在の点をスクリーン座標に変換
 		var screen_previous_point: Vector2 = wtos_node.world_to_screen(previous_point)
 		var screen_current_point: Vector2 = wtos_node.world_to_screen(current_point)
 
 		# 直前の点から現在の点まで緑色の線を描画
-		draw_line(screen_previous_point, screen_current_point, Color.WHITE,3.0)
+		draw_line(screen_previous_point, screen_current_point, Color.WHITE, 3.0)
 
 		previous_point = current_point  # 現在の点を次のループの直前の点として保存
+
+
+# 点の描画
+func draw_point():
+	"""
+	点を描画する関数。
+	"""
+	point_manager.clear_point()
+	var test = Vector2(calculation_node.current_x, calculation_node.current_y)
+	point_manager.add_point({"color": Color.RED}, test)
+
 
 func _ready():
 	"""
@@ -79,6 +89,4 @@ func _draw():
 	draw_function()  
 
 	# 点を描画
-	point_manager.clear_point()
-	var test=Vector2(calculation_node.current_x,calculation_node.current_y)
-	point_manager.add_point({"color": Color.RED}, test)
+	draw_point()
