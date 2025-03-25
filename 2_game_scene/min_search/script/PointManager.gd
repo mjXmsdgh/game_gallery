@@ -32,6 +32,7 @@ func add_point(point_data: Dictionary, point: Vector2) -> void:
 
 	# 点の座標を辞書に追加する。
 	new_point_data.pos = point
+	
 	# PointData型に変換
 	var typed_point_data: PointData = PointData.new()
 	typed_point_data.color = new_point_data.color
@@ -52,14 +53,19 @@ func remove_point(index: int) -> void:
 	Args:
 		index (int): 削除する点のインデックス。
 	"""
+
 	# インデックスが有効な範囲内にあるかチェックする。
-	if index >= 0 and index < points.size():
+	if index<0:
+		return
+	if index >= points.size():
+		return
 
-		# 指定されたインデックスの点を削除する。
-		points.remove_at(index)
+	# 指定されたインデックスの点を削除する。
+	points.remove_at(index)
 
-		# 親ノード（PointNode）に再描画を通知する。
-		PointNode.queue_redraw()
+	# 親ノード（PointNode）に再描画を通知する。
+	PointNode.queue_redraw()
+
 
 # 全ての点を削除する
 func clear_point() -> void:
