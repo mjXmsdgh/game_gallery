@@ -4,6 +4,8 @@ extends Node2D
 
 # wtos_node は、ワールド座標をスクリーン座標に変換する処理を行う 
 @onready var wtos_node = get_node_or_null("../../world_to_screen")
+@onready var point_manager: Node2D = get_parent()
+
 
 # ノードがシーンツリーに追加されたときに一度だけ呼ばれる関数
 func _ready() -> void:
@@ -11,8 +13,8 @@ func _ready() -> void:
 	ノードの初期化処理。シーンツリーに追加された時に一度だけ呼び出されます。
 	ここでは、再描画を要求しています。
 	"""
+	point_manager.points_changed.connect(_on_points_changed)
 	queue_redraw()
-	# queue_redraw() は、_draw() 関数を呼び出して再描画を要求します。
 
 
 # 描画処理を行う関数
@@ -22,6 +24,9 @@ func _draw() -> void:
 	point_managerが保持している点を、world_to_screenノードを通してスクリーン座標に変換し、描画を行います。
 	また、各点からx軸、y軸への垂線も描画しています。
 	"""
+	# PointManagerから点のデータを取得
+	var points: Array[Dictionary] = point_manager.get_points()
+
 	# 親ノード（point_manager）が保持している点の情報を順番に処理します。
 	for point_data in get_parent().points:
 
@@ -42,6 +47,11 @@ func _draw() -> void:
 
 		# 点そのものを描画します。  位置、半径、色
 		draw_circle(screen_point, 5, point_color)
+
+
+# 点が変更されたときに呼び出される
+func _on_points_changed():
+	queue_redraw()
 
 
 # 毎フレーム呼ばれる関数

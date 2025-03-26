@@ -18,6 +18,8 @@ const INITIAL_POINTS: Array[Dictionary] = [
 	{"color": Color.BLUE, "pos": Vector2(0, 0)},
 ]
 
+signal points_changed
+
 # 点を追加する
 func add_point(point_data: Dictionary, point: Vector2) -> void:
 	"""
@@ -44,6 +46,8 @@ func add_point(point_data: Dictionary, point: Vector2) -> void:
 	# 親ノード（PointNode）に再描画を通知する。
 	PointNode.queue_redraw()
 
+	points_changed.emit()
+
 
 # 点を削除する
 func remove_point(index: int) -> void:
@@ -63,8 +67,7 @@ func remove_point(index: int) -> void:
 	# 指定されたインデックスの点を削除する。
 	points.remove_at(index)
 
-	# 親ノード（PointNode）に再描画を通知する。
-	PointNode.queue_redraw()
+	points_changed.emit()
 
 
 # 全ての点を削除する
@@ -75,8 +78,19 @@ func clear_point() -> void:
 	# points配列を空にする。
 	points.clear()
 
-	# 親ノード（PointNode）に再描画を通知する。
-	PointNode.queue_redraw()
+	points_changed.emit()
+
+
+# 点の情報をDictionaryの配列として返す
+func get_points() -> Array[Dictionary]:
+	var point_dicts: Array[Dictionary] = []
+	for point_data in points:
+		point_dicts.append({
+			"color": point_data.color,
+			"pos": point_data.pos
+		})
+	return point_dicts
+
 
 # ノードがシーンツリーに追加されたときに呼び出される
 func _ready() -> void:
