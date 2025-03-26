@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_1sb82"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="2_ku3po"]
-[ext_resource type="Script" path="res://2_game_scene/min_search/script/Point.gd" id="3_ddsdi"]
-[ext_resource type="Script" path="res://2_game_scene/min_search/script/FunctionGraph.gd" id="3_y7110"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/PointDrawer.gd" id="3_ddsdi"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/FunctionDrawer.gd" id="3_y7110"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/PointManager.gd" id="4_wcucf"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/Calculation.gd" id="6_wn7fd"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/QuadraticFunction.gd" id="7_sempo"]
@@ -17,20 +17,20 @@ script = ExtResource("2_1sb82")
 [node name="world_to_screen" type="Node2D" parent="AxisNode"]
 script = ExtResource("2_ku3po")
 
-[node name="QuadraticGraphNode" type="Node2D" parent="AxisNode"]
+[node name="FunctionDrawer" type="Node2D" parent="AxisNode"]
 script = ExtResource("3_y7110")
 
 [node name="PointManager" type="Node2D" parent="AxisNode"]
 script = ExtResource("4_wcucf")
 
-[node name="PointNode" type="Node2D" parent="AxisNode/PointManager"]
+[node name="PointDrawer" type="Node2D" parent="AxisNode/PointManager"]
 script = ExtResource("3_ddsdi")
 
-[node name="CalculationNode" type="Node2D" parent="."]
+[node name="Calculation" type="Node2D" parent="."]
 script = ExtResource("6_wn7fd")
 
-[node name="QuadraticFunctionNode" type="Node2D" parent="CalculationNode"]
+[node name="QuadraticFunction" type="Node2D" parent="Calculation"]
 script = ExtResource("7_sempo")
 
-[node name="PolyFunctionNode" type="Node2D" parent="CalculationNode"]
+[node name="PolyFunction" type="Node2D" parent="Calculation"]
 script = ExtResource("8_pjgyd")

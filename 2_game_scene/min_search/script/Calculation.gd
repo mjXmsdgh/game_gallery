@@ -53,5 +53,5 @@ func _ready() -> void:
 	if point_manager_node == null:
 		push_error("point_manager_node is null")
 
-	poly_func_node=get_node_or_null("PolyFunctionNode")
+	poly_func_node=get_node_or_null("PolyFunction")
 	current_y=poly_func_node.calculate(starting_x)
