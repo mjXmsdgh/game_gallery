@@ -13,8 +13,7 @@ var learning_rate_x: float = 0.1  # x方向の学習率 (デフォルト値: 0.1
 # point_managerノードへの参照
 var point_manager_node  # 点を管理するPointManagerノードへの参照
 
-# 二次関数ノードへの参照
-var quadratic_function_node: Node2D
+# 関数ノードへの参照
 var poly_func_node:Node2D
 
 # 次のステップに進む
