@@ -9,9 +9,9 @@ var y_min: float = -10.0  # y軸の最小値（下端）: グラフが描画さ�
 var y_max: float = 10.0   # y軸の最大値（上端）: グラフが描画されるy軸の最大値
 var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グラフ上の1単位が画面上の何ピクセルに相当するか
 
+var wtos_node
+var point_manager
 
-@onready var wtos_node=get_parent().get_node_or_null("world_to_screen")
-@onready var point_manager=get_parent().get_node_or_null("PointManager")
 @onready var calculation_node=get_parent().get_parent().get_node_or_null("Calculation")
 @onready var poly_func_node=get_parent().get_parent().get_node_or_null("Calculation/PolyFunction")
 
@@ -58,6 +58,8 @@ func _ready():
 	シーンが準備完了したときに一度だけ呼ばれる関数。
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
+	wtos_node=get_parent().get_parent().get_node_or_null("AxisNode/world_to_screen")
+	point_manager=get_parent().get_parent().get_node_or_null("AxisNode/PointManager")
 
 	if wtos_node == null:
 		printerr("wtos_node is null")
