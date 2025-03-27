@@ -28,7 +28,7 @@ func _draw() -> void:
 	var points: Array[Dictionary] = point_manager.get_points()
 
 	# 親ノード（point_manager）が保持している点の情報を順番に処理します。
-	for point_data in get_parent().points:
+	for point_data in point_manager.points:
 
 		# 描画する点
 		var point: Vector2 = point_data.pos 

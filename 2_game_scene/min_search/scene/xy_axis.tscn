@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1v0oxliodfs7"]
+[gd_scene load_steps=8 format=3 uid="uid://ctrpvo3cwj2mn"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_1sb82"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="2_ku3po"]
