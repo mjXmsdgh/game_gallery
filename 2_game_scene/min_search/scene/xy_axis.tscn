@@ -22,7 +22,7 @@ script = ExtResource("3_y7110")
 [node name="PointManager" type="Node2D" parent="AxisNode"]
 script = ExtResource("4_wcucf")
 
-[node name="PointDrawer" type="Node2D" parent="AxisNode/PointManager"]
+[node name="PointDrawer" type="Node2D" parent="AxisNode"]
 script = ExtResource("3_ddsdi")
 
 [node name="Calculation" type="Node2D" parent="."]

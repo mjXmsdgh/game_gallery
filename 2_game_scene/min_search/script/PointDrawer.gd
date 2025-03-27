@@ -3,8 +3,8 @@ extends Node2D
 # PointNode は、点を描画する役割を持つノードです。
 
 # wtos_node は、ワールド座標をスクリーン座標に変換する処理を行う 
-@onready var wtos_node = get_node_or_null("../../world_to_screen")
-@onready var point_manager: Node2D = get_parent()
+@onready var wtos_node = get_node_or_null("../world_to_screen")
+@onready var point_manager: Node2D = get_node_or_null("../PointManager")
 
 
 # ノードがシーンツリーに追加されたときに一度だけ呼ばれる関数
