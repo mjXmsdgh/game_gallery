@@ -58,7 +58,8 @@ func _ready():
 	シーンが準備完了したときに一度だけ呼ばれる関数。
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
-	wtos_node=get_parent().get_parent().get_node_or_null("AxisNode/world_to_screen")
+
+	wtos_node=get_node_or_null("../world_to_screen")
 	point_manager=get_parent().get_parent().get_node_or_null("Data/PointManager")
 
 	if wtos_node == null:

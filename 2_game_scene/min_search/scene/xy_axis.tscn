@@ -13,9 +13,6 @@
 [node name="AxisNode" type="Node2D" parent="."]
 script = ExtResource("2_1sb82")
 
-[node name="world_to_screen" type="Node2D" parent="AxisNode"]
-script = ExtResource("2_ku3po")
-
 [node name="Calculation" type="Node2D" parent="."]
 script = ExtResource("6_wn7fd")
 
@@ -28,6 +25,9 @@ script = ExtResource("4_wcucf")
 script = ExtResource("8_pjgyd")
 
 [node name="Drawer" type="Node2D" parent="."]
+
+[node name="world_to_screen" type="Node2D" parent="Drawer"]
+script = ExtResource("2_ku3po")
 
 [node name="FunctionDrawer" type="Node2D" parent="Drawer"]
 script = ExtResource("3_y7110")

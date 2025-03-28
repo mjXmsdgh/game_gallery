@@ -2,7 +2,7 @@ extends Node2D
 
 # PointNode は、点を描画する役割を持つノードです。
 
-@onready var wtos_node=get_node_or_null("../../AxisNode/world_to_screen")
+@onready var wtos_node=get_node_or_null("../world_to_screen")
 @onready var point_manager: Node2D=get_node_or_null("../../Data/PointManager")
 
 

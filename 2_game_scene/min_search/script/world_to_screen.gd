@@ -1,7 +1,7 @@
 extends Node2D
 
 # Axisノードへの参照
-@onready var axis_node = get_parent()
+@onready var axis_node=get_node_or_null("../../AxisNode")
 
 # ワールド座標をスクリーン座標に変換
 func world_to_screen(world_pos: Vector2) -> Vector2:
