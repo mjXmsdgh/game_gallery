@@ -19,13 +19,13 @@ script = ExtResource("2_ku3po")
 [node name="Calculation" type="Node2D" parent="."]
 script = ExtResource("6_wn7fd")
 
-[node name="PolyFunction" type="Node2D" parent="Calculation"]
-script = ExtResource("8_pjgyd")
-
 [node name="Data" type="Node2D" parent="."]
 
 [node name="PointManager" type="Node2D" parent="Data"]
 script = ExtResource("4_wcucf")
+
+[node name="PolyFunction" type="Node2D" parent="Data"]
+script = ExtResource("8_pjgyd")
 
 [node name="Drawer" type="Node2D" parent="."]
 

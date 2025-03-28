@@ -12,8 +12,8 @@ var graph_scale: float = 30.0  # グラフのスケール（拡大率）：グ�
 var wtos_node
 var point_manager
 
-@onready var calculation_node=get_parent().get_parent().get_node_or_null("Calculation")
-@onready var poly_func_node=get_parent().get_parent().get_node_or_null("Calculation/PolyFunction")
+@onready var calculation_node=get_node_or_null("../../Calculation")
+@onready var poly_func_node=get_node_or_null("../../Data/PolyFunction")
 
 # 二次関数の描画
 func draw_function():

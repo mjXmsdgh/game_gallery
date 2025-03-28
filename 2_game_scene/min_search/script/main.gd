@@ -8,7 +8,7 @@ var point_manager_node: Node2D=null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	calculation_node = get_node_or_null("XyAxis/Calculation")
-	point_manager_node = get_node_or_null("XyAxis/AxisNode/PointManager")
+	point_manager_node = get_node_or_null("XyAxis/Data/PointManager")
 
 	if calculation_node==null or point_manager_node==null:
 		push_error("Error: CalculationNode or PointManager not found.")
