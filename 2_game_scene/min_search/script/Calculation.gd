@@ -47,7 +47,7 @@ func _ready() -> void:
 	"""
 	ノードがシーンツリーに追加されたときに一度だけ呼ばれる関数。
 	"""
-	point_manager_node = get_node_or_null("../AxisNode/PointManager")  # PointManagerノードを取得
+	point_manager_node = get_node_or_null("../Data/PointManager")  # PointManagerノードを取得
 
 	if point_manager_node == null:
 		push_error("point_manager_node is null")

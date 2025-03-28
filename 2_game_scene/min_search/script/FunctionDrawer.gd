@@ -59,7 +59,7 @@ func _ready():
 	ここでは、親ノードであるAxisNodeが取得できているか確認して、_draw() メソッドを呼び出して、初期描画を行うように要求する。
 	"""
 	wtos_node=get_parent().get_parent().get_node_or_null("AxisNode/world_to_screen")
-	point_manager=get_parent().get_parent().get_node_or_null("AxisNode/PointManager")
+	point_manager=get_parent().get_parent().get_node_or_null("Data/PointManager")
 
 	if wtos_node == null:
 		printerr("wtos_node is null")
