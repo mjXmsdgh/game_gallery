@@ -19,16 +19,16 @@ script = ExtResource("2_ku3po")
 [node name="PointManager" type="Node2D" parent="AxisNode"]
 script = ExtResource("4_wcucf")
 
-[node name="PointDrawer" type="Node2D" parent="AxisNode"]
-script = ExtResource("3_ddsdi")
-
-[node name="Function" type="Node2D" parent="."]
-
-[node name="FunctionDrawer" type="Node2D" parent="Function"]
-script = ExtResource("3_y7110")
-
 [node name="Calculation" type="Node2D" parent="."]
 script = ExtResource("6_wn7fd")
 
 [node name="PolyFunction" type="Node2D" parent="Calculation"]
 script = ExtResource("8_pjgyd")
+
+[node name="Drawer" type="Node2D" parent="."]
+
+[node name="FunctionDrawer" type="Node2D" parent="Drawer"]
+script = ExtResource("3_y7110")
+
+[node name="PointDrawer" type="Node2D" parent="Drawer"]
+script = ExtResource("3_ddsdi")
