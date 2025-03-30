@@ -3,7 +3,7 @@
 extends Node2D
 
 # 計算開始地点
-var starting_x: float = 0.5
+var starting_x: float = 5.0
 var current_x: float = starting_x
 var current_y: float = 0.0
 

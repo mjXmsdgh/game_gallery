@@ -4,7 +4,7 @@ extends Node2D
 var x_min: float = -10.0
 var x_max: float = 10.0
 var y_min: float = -10.0
-var y_max: float = 10.0
+var y_max: float = 100.0
 
 # 各プロパティのアクセサ
 func get_x_min() -> float:

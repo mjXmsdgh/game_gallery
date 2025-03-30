@@ -1,22 +1,15 @@
 extends Node2D
 
-
-var a: float=1.0
-var b: float=3.0
-var c: float=2.0
-var d: float=0.0
-
+const PI = 3.14159265358979323846
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-
 func calculate(x: float) -> float:
-
-	return a*x*x*x+b*x*x+c*x+d
-
+	# Rastrigin関数の1次元近似
+	return 10 + x * x - 10 * cos(2 * PI * x)
 
 func gradient(x: float) -> float:
-	return 3*a*x*x+2*b*x+c
+	# Rastrigin関数の勾配
+	return 2 * x + 20 * PI * sin(2 * PI * x)
