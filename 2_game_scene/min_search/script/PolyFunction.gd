@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func calculate(x: float) -> float:
 	# Rastrigin関数の1次元近似
-	return 10 + x * x - 10 * cos(2 * PI * x)
+	return (10 + x * x - 10 * cos(2 * PI * x)-5)*0.2
 
 func gradient(x: float) -> float:
 	# Rastrigin関数の勾配

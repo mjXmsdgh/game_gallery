@@ -29,7 +29,13 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 	var screen_width: float = screen_size.x
 	var screen_height: float = screen_size.y
 
-	var screen_x: float = center.x + (world_pos.x - ((x_max + x_min) / 2)) * (screen_width / world_width)
-	var screen_y: float = center.y - (world_pos.y - ((y_max + y_min) / 2)) * (screen_height / world_height)
+	var world_center_x=(x_max + x_min) / 2
+	var world_center_y=(y_max + y_min) / 2
+
+	var scale_x=screen_width / world_width
+	var scale_y=screen_height / world_height
+
+	var screen_x: float = center.x + (world_pos.x - world_center_x) * scale_x
+	var screen_y: float = center.y - (world_pos.y - world_center_y) * scale_y
 
 	return Vector2(screen_x, screen_y)

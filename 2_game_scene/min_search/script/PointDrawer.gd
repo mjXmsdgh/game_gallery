@@ -47,6 +47,11 @@ func _draw() -> void:
 		# 点そのものを描画します。  位置、半径、色
 		draw_circle(screen_point, 5, point_color)
 
+		#指定した点を描画
+		var world_origin=Vector2(0,0)
+		var screen_origin=wtos_node.world_to_screen(world_origin)
+		draw_circle(screen_origin,5,Color.BLUE)
+
 
 # 点が変更されたときに呼び出される
 func _on_points_changed():
