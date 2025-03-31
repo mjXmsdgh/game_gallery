@@ -1,9 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr7grntsh5qly"]
+[gd_scene load_steps=10 format=3 uid="uid://dr7grntsh5qly"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/main.gd" id="1_nrdeg"]
-[ext_resource type="PackedScene" uid="uid://ctrpvo3cwj2mn" path="res://2_game_scene/min_search/scene/xy_axis.tscn" id="2_3mj1h"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_vcnfu"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/Calculation_GD.gd" id="3_t8bvj"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/Annealing.gd" id="4_op2lv"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/PointManager.gd" id="5_ul5uq"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/PolyFunction.gd" id="6_t33ho"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/world_to_screen.gd" id="7_xhvi3"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/FunctionDrawer.gd" id="8_ho2la"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/PointDrawer.gd" id="9_ouph8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nrdeg")
 
-[node name="XyAxis" parent="." instance=ExtResource("2_3mj1h")]
+[node name="XyAxis" type="Node2D" parent="."]
+
+[node name="AxisNode" type="Node2D" parent="XyAxis"]
+script = ExtResource("2_vcnfu")
+
+[node name="Calculation_GD" type="Node2D" parent="XyAxis"]
+script = ExtResource("3_t8bvj")
+
+[node name="Calculation_AN" type="Node2D" parent="XyAxis"]
+script = ExtResource("4_op2lv")
+
+[node name="Data" type="Node2D" parent="XyAxis"]
+
+[node name="PointManager" type="Node2D" parent="XyAxis/Data"]
+script = ExtResource("5_ul5uq")
+
+[node name="PolyFunction" type="Node2D" parent="XyAxis/Data"]
+script = ExtResource("6_t33ho")
+
+[node name="Drawer" type="Node2D" parent="XyAxis"]
+
+[node name="world_to_screen" type="Node2D" parent="XyAxis/Drawer"]
+script = ExtResource("7_xhvi3")
+
+[node name="FunctionDrawer" type="Node2D" parent="XyAxis/Drawer"]
+script = ExtResource("8_ho2la")
+
+[node name="PointDrawer" type="Node2D" parent="XyAxis/Drawer"]
+script = ExtResource("9_ouph8")
