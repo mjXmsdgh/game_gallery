@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr7grntsh5qly"]
+[gd_scene load_steps=11 format=3 uid="uid://dr7grntsh5qly"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/main.gd" id="1_nrdeg"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/screen_info.gd" id="2_3pccd"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_vcnfu"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/Calculation_GD.gd" id="3_t8bvj"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/Annealing.gd" id="4_op2lv"]
@@ -14,6 +15,9 @@
 script = ExtResource("1_nrdeg")
 
 [node name="XyAxis" type="Node2D" parent="."]
+
+[node name="ScreenInfo" type="Node2D" parent="XyAxis"]
+script = ExtResource("2_3pccd")
 
 [node name="AxisNode" type="Node2D" parent="XyAxis"]
 script = ExtResource("2_vcnfu")

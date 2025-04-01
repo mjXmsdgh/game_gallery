@@ -8,6 +8,8 @@ var x_max: float = 10.0
 var y_min: float = -10.0
 var y_max: float = 10.0
 
+
+
 # x軸の範囲を設定
 func set_x_range(x_min_val: float, x_max_val: float) -> void:
 	x_min=x_min_val
@@ -37,34 +39,16 @@ func get_y_max() -> float:
 	return y_max
 
 
-# 画面の幅と高さを取得
-func get_screen_size() -> Vector2:
-	
-	# ビューポート（画面）の矩形領域のサイズを取得します。
-	var screen_width: float = get_viewport_rect().size.x
-	var screen_height: float = get_viewport_rect().size.y
-	
-	return Vector2(screen_width, screen_height)
-
-# 画面の中心の座標を取得
-func get_screen_center() -> Vector2:
-	
-	# 画面のサイズを取得します。
-	var screen_size: Vector2 = get_screen_size()
-	
-	# 画面の中心座標を計算します。
-	var center_position: Vector2 = Vector2(screen_size.x / 2, screen_size.y / 2)
-	
-	return center_position
-
 # 軸の描画
 func draw_axis():
+
+	var screen_info=get_node_or_null("../ScreenInfo")
 	
 	# 画面の中心座標を取得します。
-	var center: Vector2 = get_screen_center()
+	var center: Vector2 = screen_info.get_screen_center()
 	
 	# 画面のサイズを取得します。
-	var screen_size: Vector2 = get_screen_size()
+	var screen_size: Vector2 = screen_info.get_screen_size()
 
 	# x軸
 	# x軸の開始位置は、画面の左端で、y座標は画面の中心です。

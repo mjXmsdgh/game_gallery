@@ -3,6 +3,8 @@ extends Node2D
 # Axisノードへの参照
 @onready var axis_node: Node2D = get_node_or_null("../../AxisNode") as Node2D
 
+@onready var screen_info: Node2D =get_node_or_null("../../ScreenInfo")
+
 # ワールド座標をスクリーン座標に変換
 func world_to_screen(world_pos: Vector2) -> Vector2:
 	"""
@@ -16,8 +18,8 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 		print_debug("Error: parent axis node not found")
 		return Vector2.ZERO
 
-	var center: Vector2 = axis_node.get_screen_center()
-	var screen_size: Vector2 = axis_node.get_screen_size()
+	var center: Vector2 = screen_info.get_screen_center()
+	var screen_size: Vector2 = screen_info.get_screen_size()
 	
 	# ここでAxisNodeのx_min,x_max等を取得する必要がある。ただしそれはAxisNodeの責務
 	var x_min: float = axis_node.get_x_min()
