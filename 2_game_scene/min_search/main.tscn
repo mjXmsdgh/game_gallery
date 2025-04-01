@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dr7grntsh5qly"]
+[gd_scene load_steps=12 format=3 uid="uid://dr7grntsh5qly"]
 
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/main.gd" id="1_nrdeg"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/screen_info.gd" id="2_3pccd"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/axis.gd" id="2_vcnfu"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/Calculation_GD.gd" id="3_t8bvj"]
+[ext_resource type="Script" path="res://2_game_scene/min_search/script/axis_range.gd" id="4_42jtj"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/Annealing.gd" id="4_op2lv"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/PointManager.gd" id="5_ul5uq"]
 [ext_resource type="Script" path="res://2_game_scene/min_search/script/PolyFunction.gd" id="6_t33ho"]
@@ -21,6 +22,9 @@ script = ExtResource("2_3pccd")
 
 [node name="AxisNode" type="Node2D" parent="XyAxis"]
 script = ExtResource("2_vcnfu")
+
+[node name="AxisRange" type="Node2D" parent="XyAxis"]
+script = ExtResource("4_42jtj")
 
 [node name="Calculation_GD" type="Node2D" parent="XyAxis"]
 script = ExtResource("3_t8bvj")

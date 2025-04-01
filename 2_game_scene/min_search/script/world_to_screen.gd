@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var screen_info: Node2D =get_node_or_null("../../ScreenInfo")
 
+@onready var axis_range: Node2D =get_node_or_null("../../AxisRange")
+
 # ワールド座標をスクリーン座標に変換
 func world_to_screen(world_pos: Vector2) -> Vector2:
 	"""
@@ -22,10 +24,10 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 	var screen_size: Vector2 = screen_info.get_screen_size()
 	
 	# ここでAxisNodeのx_min,x_max等を取得する必要がある。ただしそれはAxisNodeの責務
-	var x_min: float = axis_node.get_x_min()
-	var x_max: float = axis_node.get_x_max()
-	var y_min: float = axis_node.get_y_min()
-	var y_max: float = axis_node.get_y_max()
+	var x_min: float = axis_range.get_x_min()
+	var x_max: float = axis_range.get_x_max()
+	var y_min: float = axis_range.get_y_min()
+	var y_max: float = axis_range.get_y_max()
 	var world_width: float = x_max - x_min
 	var world_height: float = y_max - y_min
 	var screen_width: float = screen_size.x
