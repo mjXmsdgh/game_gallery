@@ -13,7 +13,7 @@ var wtos_node
 var point_manager
 
 @onready var calculation_node=get_node_or_null("../../Calculation_AN")
-@onready var poly_func_node=get_node_or_null("../../Data/PolyFunction")
+@onready var poly_func_node=get_node_or_null("../../../Data/PolyFunction")
 
 # 二次関数の描画
 func draw_function():
@@ -60,7 +60,7 @@ func _ready():
 	"""
 
 	wtos_node=get_node_or_null("../world_to_screen")
-	point_manager=get_parent().get_parent().get_node_or_null("Data/PointManager")
+	point_manager=get_parent().get_parent().get_node_or_null("../Data/PointManager")
 
 	if wtos_node == null:
 		printerr("wtos_node is null")

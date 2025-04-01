@@ -32,14 +32,6 @@ script = ExtResource("3_t8bvj")
 [node name="Calculation_AN" type="Node2D" parent="XyAxis"]
 script = ExtResource("4_op2lv")
 
-[node name="Data" type="Node2D" parent="XyAxis"]
-
-[node name="PointManager" type="Node2D" parent="XyAxis/Data"]
-script = ExtResource("5_ul5uq")
-
-[node name="PolyFunction" type="Node2D" parent="XyAxis/Data"]
-script = ExtResource("6_t33ho")
-
 [node name="Drawer" type="Node2D" parent="XyAxis"]
 
 [node name="world_to_screen" type="Node2D" parent="XyAxis/Drawer"]
@@ -50,3 +42,11 @@ script = ExtResource("8_ho2la")
 
 [node name="PointDrawer" type="Node2D" parent="XyAxis/Drawer"]
 script = ExtResource("9_ouph8")
+
+[node name="Data" type="Node2D" parent="."]
+
+[node name="PointManager" type="Node2D" parent="Data"]
+script = ExtResource("5_ul5uq")
+
+[node name="PolyFunction" type="Node2D" parent="Data"]
+script = ExtResource("6_t33ho")

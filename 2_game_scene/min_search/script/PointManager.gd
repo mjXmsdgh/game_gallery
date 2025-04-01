@@ -98,7 +98,7 @@ func _ready() -> void:
 	ノードの初期化処理。
 	"""
 	#PointNodeの参照を取得
-	PointNode=get_node_or_null("../../Drawer/PointDrawer")
+	PointNode=get_node_or_null("../../XyAxis/Drawer/PointDrawer")
 
 	if PointNode == null:
 		push_error("Error: PointNode not found.")
