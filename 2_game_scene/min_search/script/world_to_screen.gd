@@ -1,11 +1,11 @@
 extends Node2D
 
 # Axisノードへの参照
-@onready var axis_node: Node2D = get_node_or_null("../../AxisNode") as Node2D
+@onready var axis_node: Node2D = get_node_or_null("../../XyAxis/AxisNode") as Node2D
 
-@onready var screen_info: Node2D =get_node_or_null("../../ScreenInfo")
+@onready var screen_info: Node2D =get_node_or_null("../../XyAxis/ScreenInfo")
 
-@onready var axis_range: Node2D =get_node_or_null("../../AxisRange")
+@onready var axis_range: Node2D =get_node_or_null("../../XyAxis/AxisRange")
 
 # ワールド座標をスクリーン座標に変換
 func world_to_screen(world_pos: Vector2) -> Vector2:
@@ -17,7 +17,7 @@ func world_to_screen(world_pos: Vector2) -> Vector2:
 		Vector2: 変換されたスクリーン座標
 	"""
 	if axis_node == null:
-		print_debug("Error: parent axis node not found")
+		push_error("Error: parent axis node not found")
 		return Vector2.ZERO
 
 	var center: Vector2 = screen_info.get_screen_center()
