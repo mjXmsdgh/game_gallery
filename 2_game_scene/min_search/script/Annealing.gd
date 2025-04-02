@@ -27,11 +27,11 @@ var is_finished: bool = false
 
 # 初期化
 func _ready() -> void:
-	point_manager_node = get_node_or_null("../../Data/PointManager")
+	point_manager_node = get_node_or_null("../Data/PointManager")
 	if point_manager_node == null:
 		push_error("point_manager_node is null")
 
-	poly_func_node = get_node_or_null("../../Data/PolyFunction")
+	poly_func_node = get_node_or_null("../Data/PolyFunction")
 	if poly_func_node == null:
 		push_error("poly_func_node is null")
 
